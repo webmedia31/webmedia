@@ -1,0 +1,39 @@
+/* Nuxt pages transitions */
+
+.page-enter-active,
+.page-leave-active {
+  transition: all .3s;
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+
+/* Nuxt layouts transitions */
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: all .4s
+}
+
+.layout-enter,
+.layout-leave-active {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.loading-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #108775;
+  text-align: center;
+  padding-top: 200px;
+  font-size: 30px;
+  font-family: sans-serif;
+}

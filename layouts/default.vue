@@ -1,22 +1,18 @@
 <template>
   <div>
-
     <nav
       class="navbar header has-shadow is-primary"
       role="navigation"
       aria-label="main navigation"
     >
-      <div class="navbar-brand">
-        <Logo/>
+      <div class="container">
+        <div class="navbar-brand">
+          <Logo />
+        </div>
+
+        <Sidebar />
       </div>
-
-
-
-      <Sidebar/>
     </nav>
-
-
-
 
     <section class="main-content columns">
       <aside class="column is-2 section">
@@ -40,12 +36,13 @@
 </template>
 
 <script>
-import Sidebar from '@/components/sidebar/Sidebar'
-import Logo from '@/components/Logo'
+import Sidebar from "@/components/sidebar/Sidebar";
+import Logo from "@/components/Logo";
 
 export default {
   components: {
-    Logo, Sidebar
+    Logo,
+    Sidebar
   },
   data() {
     return {
@@ -61,11 +58,8 @@ export default {
           icon: "lightbulb",
           to: { name: "inspire" }
         }
-      ],
+      ]
     };
   }
 };
 </script>
-
-
-
