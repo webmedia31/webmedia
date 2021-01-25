@@ -14,7 +14,7 @@
 
           <div>
             Закрыть
-            <div class="navbar-burger" >
+            <div class="navbar-burger">
               <span />
               <span />
               <span />
@@ -29,21 +29,7 @@
                 icon="information-outline"
                 label="Info"
               ></b-menu-item>
-              <b-menu-item icon="settings">
-                <template #label="props">
-                  Administrator
-                  <b-icon
-                    class="is-pulled-right"
-                    :icon="props.expanded ? 'menu-down' : 'menu-up'"
-                  ></b-icon>
-                </template>
-                <b-menu-item icon="account" label="Users"></b-menu-item>
-                <b-menu-item
-                  icon="cash-multiple"
-                  label="Payments"
-                  disabled
-                ></b-menu-item>
-              </b-menu-item>
+
               <b-menu-item icon="account" label="My Account">
                 <b-menu-item label="Account data"></b-menu-item>
                 <b-menu-item label="Addresses"></b-menu-item>
@@ -59,6 +45,14 @@
               ></b-menu-item>
             </b-menu-list>
           </b-menu>
+
+          <ul class="menu-list">
+            <li v-for="(item, key) of items" :key="key">
+              <nuxt-link :to="item.to" exact-active-class="is-active">
+                <b-icon :icon="item.icon" /> {{ item.title }}
+              </nuxt-link>
+            </li>
+          </ul>
         </div>
 
         <div class="sidebar__footer"></div>
@@ -66,7 +60,6 @@
     </b-sidebar>
 
     <b-button @click="sidebarConfig.open = true">Show</b-button>
-
   </section>
 </template>
 
@@ -77,22 +70,32 @@ export default {
   components: {
     LangSwitcher
   },
-  data() {
-    return {
-      sidebarConfig: {
-        open: false,
-        overlay: false,
-        fullheight: true,
-        fullwidth: false,
-        right: true
+  data: () => ({
+    sidebarConfig: {
+      open: false,
+      overlay: false,
+      fullheight: true,
+      fullwidth: false,
+      right: true
+    },
+    items: [
+      {
+        title: "Home",
+        icon: "home",
+        to: { name: "index" }
+      },
+      {
+        title: "Inspire",
+        icon: "lightbulb",
+        to: { name: "inspire" }
       }
-    };
-  }
+    ]
+  })
 };
 </script>
 
 <style scoped>
 .navbar-burger {
-    display: block;
+  display: block;
 }
 </style>

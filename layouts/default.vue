@@ -1,34 +1,10 @@
 <template>
   <div>
-    <nav
-      class="navbar header has-shadow is-primary"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="container">
-        <div class="navbar-brand">
-          <Logo />
-        </div>
 
-        <Sidebar />
-      </div>
-    </nav>
+    <Navbar/>
 
     <section class="main-content columns">
-      <aside class="column is-2 section">
-        <p class="menu-label is-hidden-touch">
-          General
-        </p>
-        <ul class="menu-list">
-          <li v-for="(item, key) of items" :key="key">
-            <nuxt-link :to="item.to" exact-active-class="is-active">
-              <b-icon :icon="item.icon" /> {{ item.title }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </aside>
-
-      <div class="container column is-10">
+      <div class="container column is-12">
         <nuxt />
       </div>
     </section>
@@ -36,30 +12,15 @@
 </template>
 
 <script>
-import Sidebar from "@/components/sidebar/Sidebar";
-import Logo from "@/components/Logo";
+
+import Navbar from '@/components/Navbar'
 
 export default {
   components: {
-    Logo,
-    Sidebar
+    Navbar
   },
-  data() {
-    return {
-      sidebarIsOpened: false,
-      items: [
-        {
-          title: "Home",
-          icon: "home",
-          to: { name: "index" }
-        },
-        {
-          title: "Inspire",
-          icon: "lightbulb",
-          to: { name: "inspire" }
-        }
-      ]
-    };
-  }
+  data:() => ({
+
+  })
 };
 </script>

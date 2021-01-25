@@ -1,3 +1,36 @@
+@font-face {
+  font-family: 'GilroyRegular';
+  src: url('./fonts/gilroy-regular.eot');
+  src: url('./fonts/gilroy-regular.eot?#iefix') format('embedded-opentype'), url('./fonts/Gilroy-Regular.ttf') format('truetype'), url('./fonts/Gilroy-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GilroyMedium';
+  src: url('./fonts/gilroy-medium.eot');
+  src: url('./fonts/gilroy-medium.eot?#iefix') format('embedded-opentype'), url('./fonts/Gilroy-Medium.ttf') format('truetype'), url('./fonts/Gilroy-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GilroyBold';
+  src: url('./fonts/gilroy-bold.eot');
+  src: url('./fonts/gilroy-bold.eot?#iefix') format('embedded-opentype'), url('./fonts/Gilroy-Bold.ttf') format('truetype'), url('./fonts/Gilroy-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: GilroyRegular;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+
 /* Nuxt pages transitions */
 
 .page-enter-active,
