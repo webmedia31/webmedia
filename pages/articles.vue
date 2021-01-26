@@ -13,3 +13,16 @@
     </h3>
   </section>
 </template>
+
+<script>
+export default {
+  name: "portfolio",
+  layout: 'default',
+}
+</script>
+
+<style>
+body {
+  background-color: grey;
+}
+</style>

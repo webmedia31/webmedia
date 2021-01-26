@@ -79,11 +79,13 @@ import notices from "../utils/notices"
 export default {
   name: "login",
   layout: 'auth',
-  metaInfo() {
-    return {
-      title: this.$title('LoginTitle'),
-    }
-  },
+
+
+  // metaInfo() {
+  //   return {
+  //     title: this.$title('LoginTitle'),
+  //   }
+  // },
 
   data: () => ({
     email: "",

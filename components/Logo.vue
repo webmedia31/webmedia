@@ -1,7 +1,7 @@
 <template>
-  <b-navbar-item tag="router-link" :to="{ path: '/' }">
+  <router-link :to="{ path: '/' }">
     <img src="~assets/webmedia_logo.svg" alt="Webmedia" height="28" />
-  </b-navbar-item>
+  </router-link>
 </template>
 
 <style>

@@ -8,67 +8,44 @@
       :right="sidebarConfig.right"
       v-model="sidebarConfig.open"
     >
-      <div class="p-1">
-        <div class="sidebar__header">
-          <LangSwitcher />
+      <div class="sidebar__header">
+        <LangSwitcher />
 
-          <div>
-            Закрыть
-            <div class="navbar-burger">
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
+        <div @click="sidebarConfig.open = false">
+          Закрыть
+          <NavBurger />
         </div>
+      </div>
 
-        <div class="sidebar__nav">
-          <b-menu>
-            <b-menu-list label="Menu">
-              <b-menu-item
-                icon="information-outline"
-                label="Info"
-              ></b-menu-item>
+      <div class="sidebar__nav">
+        <ul class="menu-list">
+          <li v-for="(item, key) of sideBarItems" :key="key">
+            <nuxt-link :to="item.to" exact-active-class="is-active">
+              <b-icon :icon="item.icon" /> {{ item.title }}
+            </nuxt-link>
+          </li>
+        </ul>
+      </div>
 
-              <b-menu-item icon="account" label="My Account">
-                <b-menu-item label="Account data"></b-menu-item>
-                <b-menu-item label="Addresses"></b-menu-item>
-              </b-menu-item>
-            </b-menu-list>
-
-            <b-menu-list>
-              <b-menu-item
-                label="Expo"
-                tag="router-link"
-                target="_blank"
-                to="/expo"
-              ></b-menu-item>
-            </b-menu-list>
-          </b-menu>
-
-          <ul class="menu-list">
-            <li v-for="(item, key) of items" :key="key">
-              <nuxt-link :to="item.to" exact-active-class="is-active">
-                <b-icon :icon="item.icon" /> {{ item.title }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </div>
-
-        <div class="sidebar__footer"></div>
+      <div class="sidebar__footer">
+        SIDEBAR FOOTER LINKS
       </div>
     </b-sidebar>
 
-    <b-button @click="sidebarConfig.open = true">Show</b-button>
+    <div @click="sidebarConfig.open = true">
+      <NavBurger />
+    </div>
   </section>
 </template>
 
 <script>
 import LangSwitcher from "@/components/LangSwitcher";
+import NavBurger from "@/components/NavBurger";
 
 export default {
   components: {
-    LangSwitcher
+    LangSwitcher,
+    NavBurger
   },
   data: () => ({
     sidebarConfig: {
@@ -78,16 +55,30 @@ export default {
       fullwidth: false,
       right: true
     },
-    items: [
+    sideBarItems: [
       {
-        title: "Home",
-        icon: "home",
-        to: { name: "index" }
+        title: "Команда",
+        to: { name: "about" }
       },
       {
-        title: "Inspire",
-        icon: "lightbulb",
-        to: { name: "inspire" }
+        title: "Проекты",
+        to: { name: "portfolio" }
+      },
+      {
+        title: "Блог",
+        to: { name: "articles" }
+      },
+      {
+        title: "Вакансии",
+        to: { name: "jobs" }
+      },
+      {
+        title: "Контакты",
+        to: { name: "contacts" }
+      },
+      {
+        title: "Калькулятор",
+        to: { name: "calculator" }
       }
     ]
   })
@@ -95,7 +86,14 @@ export default {
 </script>
 
 <style scoped>
+* {
+  color: #000;
+}
 .navbar-burger {
   display: block;
+}
+
+.sidebar__nav {
+  font-size: 36px;
 }
 </style>

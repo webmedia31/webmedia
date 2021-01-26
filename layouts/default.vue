@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="default_layout">
 
     <Navbar/>
 
-    <section class="main-content columns">
-      <div class="container column is-12">
+    <section class="main-content">
+      <div class="  is-12">
         <nuxt />
       </div>
     </section>
@@ -24,3 +24,11 @@ export default {
   })
 };
 </script>
+
+<style>
+  body {
+    /* background-image: url('~assets/home_bg_fullhd.jpg') !important;
+    background-size: cover; */
+    /* background-color: grey; */
+  }
+</style>

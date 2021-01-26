@@ -1,6 +1,17 @@
 <template>
   <section class="section">
+
+
+    <div class="is-mobile">
+      <p>Добро пожаловать в webmedia</p>
+      <h1>{{ title }}</h1>
+    </div>
+
     <div class="columns is-mobile">
+
+
+
+
       <card title="Free" icon="github">
         Open source on
         <a href="https://github.com/buefy/buefy">
@@ -52,13 +63,32 @@
 import Card from "~/components/Card";
 
 export default {
-  head: () => ({
-    title: "Home Page | Webmedia",
-    meta: [/*{name: 'twitter:title', contetnt: this.sort.title}*/]
-  }),
-  name: "HomePage",
+  name: 'aboutPage',
+  layout: 'default',
+  head() {
+    return {
+      title: this.title + " | Webmedia",
+      meta: [/*{name: 'twitter:title', contetnt: this.post.title}*/]
+    }
+  },
   components: {
     Card
+  },
+  data: () => ({
+    title: "Разрабатываем проекты любого масштаба в сфере digital-маркетинга",
+  }),
+
+  mounted() {
+
+
+
   }
 };
 </script>
+
+<style>
+body {
+  background-color: tomato;
+  transition: all ease-in-out .3s;
+}
+</style>

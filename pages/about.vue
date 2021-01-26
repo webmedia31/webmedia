@@ -6,6 +6,8 @@
 
 <script>
 export default {
+  name: 'aboutPage',
+  layout: 'default',
   head () {
     return {
       title: this.pageHeaderH1,
@@ -17,3 +19,10 @@ export default {
   }),
 }
 </script>
+
+
+<style>
+body {
+  background-color: grey;
+}
+</style>

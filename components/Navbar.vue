@@ -1,47 +1,19 @@
 <template>
-  <b-navbar>
-    <template #brand>
-      <Logo />
-    </template>
+  <nav class="navbar">
+    <Logo />
 
-    <template #start>
-      <b-navbar-item tag="router-link" :to="{ path: '/about' }">
-        Команда
-      </b-navbar-item>
+    <ul class="navMenu">
+      <router-link
+        v-for="(item, index) in navBarItems"
+        :key="index"
+        :to="item.to"
+      >
+        {{ item.title }}
+      </router-link>
+    </ul>
 
-      <b-navbar-item tag="router-link" :to="{ path: '/portfolio' }">
-        Проекты
-      </b-navbar-item>
-
-      <b-navbar-item tag="router-link" :to="{ path: '/articles' }">
-        Блог
-      </b-navbar-item>
-<!--
-      <b-navbar-dropdown label="Info">
-        <b-navbar-item href="#">
-          About
-        </b-navbar-item>
-        <b-navbar-item href="#">
-          Contact
-        </b-navbar-item>
-      </b-navbar-dropdown> -->
-    </template>
-
-    <template #end>
-      <b-navbar-item tag="div">
-        <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">
-            Log in
-          </a>
-        </div>
-      </b-navbar-item>
-
-      <Sidebar />
-    </template>
-  </b-navbar>
+    <Sidebar />
+  </nav>
 </template>
 
 <script>
@@ -53,6 +25,33 @@ export default {
     Logo,
     Sidebar
   },
-  data: () => ({})
+  data: () => ({
+    navBarItems: [
+      {
+        title: "Команда",
+        to: { name: "about" }
+      },
+      {
+        title: "Проекты",
+        to: { name: "portfolio" }
+      },
+      {
+        title: "Блог",
+        to: { name: "articles" }
+      }
+    ]
+  })
 };
 </script>
+
+<style>
+.navbar {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-burger:hover {
+  background-color: transparent;
+}
+</style>
