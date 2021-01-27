@@ -60,8 +60,6 @@
 </template>
 
 <script>
-import Card from "~/components/Card";
-
 export default {
   name: 'aboutPage',
   layout: 'default',
@@ -70,9 +68,6 @@ export default {
       title: this.title + " | Webmedia",
       meta: [/*{name: 'twitter:title', contetnt: this.post.title}*/]
     }
-  },
-  components: {
-    Card
   },
   data: () => ({
     title: "Разрабатываем проекты любого масштаба в сфере digital-маркетинга",

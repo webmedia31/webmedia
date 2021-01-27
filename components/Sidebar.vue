@@ -20,9 +20,9 @@
       <div class="sidebar__nav">
         <ul class="menu-list">
           <li v-for="(item, key) of sideBarItems" :key="key">
-            <nuxt-link :to="item.to" exact-active-class="is-active">
+            <NuxtLink :to="item.to" exact-active-class="is-active">
               <b-icon :icon="item.icon" /> {{ item.title }}
-            </nuxt-link>
+            </NuxtLink>
           </li>
         </ul>
       </div>
@@ -39,14 +39,9 @@
 </template>
 
 <script>
-import LangSwitcher from "@/components/LangSwitcher";
-import NavBurger from "@/components/NavBurger";
+
 
 export default {
-  components: {
-    LangSwitcher,
-    NavBurger
-  },
   data: () => ({
     sidebarConfig: {
       open: false,
