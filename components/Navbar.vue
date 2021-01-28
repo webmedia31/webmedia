@@ -49,7 +49,17 @@ display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.navbar-burger {
+  display: block;
+}
 .navbar-burger:hover {
   background-color: transparent;
+}
+.navMenu a {
+  color: #FFFCF9;
+  padding: 7px 21px;
+}
+.navMenu a:hover {
+  text-decoration: underline;
 }
 </style>

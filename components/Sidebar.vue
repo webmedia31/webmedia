@@ -1,7 +1,6 @@
 <template>
   <section class="sidebar">
     <b-sidebar
-      type="is-light"
       :fullheight="sidebarConfig.fullheight"
       :fullwidth="sidebarConfig.fullwidth"
       :overlay="sidebarConfig.overlay"
@@ -11,15 +10,18 @@
       <div class="sidebar__header">
         <LangSwitcher />
 
-        <div @click="sidebarConfig.open = false">
+        <div class="sidebar_closelink" @click="sidebarConfig.open = false">
           Закрыть
-          <NavBurger />
         </div>
       </div>
 
       <div class="sidebar__nav">
         <ul class="menu-list">
-          <li v-for="(item, key) of sideBarItems" :key="key">
+          <li
+            @click="sidebarNavUsed"
+            v-for="(item, key) of sideBarItems"
+            :key="key"
+          >
             <NuxtLink :to="item.to" exact-active-class="is-active">
               <b-icon :icon="item.icon" /> {{ item.title }}
             </NuxtLink>
@@ -28,7 +30,10 @@
       </div>
 
       <div class="sidebar__footer">
-        SIDEBAR FOOTER LINKS
+        <SocialLinks />
+        <NuxtLink class="politics_link" :to="{ path: '/politics' }"
+          >Политика конфиденциальности</NuxtLink
+        >
       </div>
     </b-sidebar>
 
@@ -39,12 +44,10 @@
 </template>
 
 <script>
-
-
 export default {
   data: () => ({
     sidebarConfig: {
-      open: false,
+      open: true,
       overlay: false,
       fullheight: true,
       fullwidth: false,
@@ -76,19 +79,111 @@ export default {
         to: { name: "calculator" }
       }
     ]
-  })
+  }),
+  methods: {
+    sidebarNavUsed() {
+      this.sidebarConfig.open = false;
+    }
+  }
 };
 </script>
 
-<style scoped>
-* {
+<style>
+.sidebar-content  * {
   color: #000;
 }
-.navbar-burger {
+.sidebar_closelink {
+  padding: 10px 50px 10px 10px;
+  cursor: pointer;
+}
+.sidebar_closelink::after {
   display: block;
+  content: "";
+  position: relative;
+  width: 20px;
+  height: 1px;
+  left: 77px;
+  top: -12px;
+  background-color: #000;
 }
 
+.sidebar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .sidebar__nav {
   font-size: 36px;
+}
+.b-sidebar .sidebar-content {
+  background-color: #fff !important;
+}
+
+.sidebar__header {
+  height: 70px;
+  border-bottom: 1px solid #000;
+}
+.sidebar__nav {
+}
+.sidebar__footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 95px;
+  border-top: 1px solid #000;
+}
+
+.social_links a {
+  font-size: 16px;
+  color: #000 !important;
+}
+.politics_link {
+  letter-spacing: 0.07em;
+  font-size: 12px;
+  color: #9f9f9f;
+  padding: 7px 0px;
+
+}
+
+
+
+/** hide main top nav on mobile and tablet */
+.navMenu {
+  display: none;
+}
+
+
+
+.b-sidebar .sidebar-content {
+  width: 100%;
+}
+.sidebar__header,
+.sidebar__nav,
+.sidebar__footer {
+  padding: 0px 20px;
+}
+
+
+@media (min-width: 340px) {
+  .b-sidebar .sidebar-content {
+    width: 320px;
+  }
+}
+
+@media (min-width: 768px) {
+  .b-sidebar .sidebar-content {
+    width: 459px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .b-sidebar .sidebar-content {
+    width: 420px;
+  }
+
+  /** show main top nav on mobil and tablet */
+  .navMenu {
+    display: flex;
+  }
 }
 </style>

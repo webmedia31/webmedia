@@ -1,0 +1,26 @@
+{
+  "callToUs": "Call us",
+  "writeToUs": "Write to us",
+  "comeToUs": "Come to us",
+  "address": "Belgorod, Shalandina street, 1a, 3rd floor, Mon-Fri: 9:00 - 18:00",
+
+
+
+
+
+  "profileTitle": "Profile",
+  "billTitle": "Bill",
+  "HistoryTitle": "History",
+  "PlanningTitle": "Planning",
+  "NewrecordTitle": "New record",
+  "DetailrecordTitle": "Record details",
+  "CategoriesTitle": "Categories",
+  "LoginTitle": "Login",
+  "RegisterTitle": "Register",
+
+  "Name": "Name",
+  "Update": "Update",
+  "placeholderEnterName": "Enter your name",
+
+  "exitLink": "Exit"
+}

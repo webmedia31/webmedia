@@ -32,6 +32,10 @@ body {
   color: #FFFCF9;
 }
 
+a {
+  color: #FFF;
+}
+
 h1 {
   font-family: GilroyBold;
   font-style: normal;
@@ -88,7 +92,6 @@ h1 {
 
 /* SIDEBAR STYLES */
 
-.b-sidebar .sidebar-content.is-fullheight {
+.b-sidebar .sidebar-content {
   justify-content: space-between;
-  min-width: 320px;
 }
