@@ -1,7 +1,6 @@
 <template>
   <div class="default_layout">
-
-    <Navbar/>
+    <Navbar />
 
     <section class="main-content">
       <div class="  is-12">
@@ -12,20 +11,27 @@
 </template>
 
 <script>
-
-
 export default {
-
-  data:() => ({
-
-  })
+  head() {
+    return {
+      titleTemplate: "%s | Webmedia",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Описание страницы Команда"
+        }
+      ]
+    };
+  },
+  data: () => ({})
 };
 </script>
 
 <style>
-  body {
-    /* background-image: url('~assets/home_bg_fullhd.jpg') !important;
+body {
+  /* background-image: url('~assets/home_bg_fullhd.jpg') !important;
     background-size: cover; */
-    /* background-color: grey; */
-  }
+  /* background-color: grey; */
+}
 </style>

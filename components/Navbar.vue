@@ -5,6 +5,7 @@
 
       <ul class="navMenu">
         <NuxtLink
+          no-prefetch
           v-for="(item, index) in navBarItems"
           :key="index"
           :to="item.to"
@@ -58,6 +59,9 @@ display: flex;
 .navMenu a {
   color: #FFFCF9;
   padding: 7px 21px;
+}
+.navMenu a.nuxt-link-active {
+  text-decoration: underline;
 }
 .navMenu a:hover {
   text-decoration: underline;

@@ -43,6 +43,8 @@
       </splide>
     </section>
 
+
+
     <section v-else>LOADING...</section>
   </div>
 </template>
@@ -85,7 +87,21 @@ export default {
     mountedMethod() {
       console.log("Mounted method");
     }
-  }
+  },
+  beforeRouteLeave (to, from, next) {
+    console.log('Hiding slider');
+    setTimeout(()=>{
+      next()
+    },1000)
+
+
+    // called when the route that renders this component is about to
+    // be navigated away from.
+    // has access to `this` component instance.
+  },
+  // beforeDestroy() {
+  //   alert('the component is destroy')
+  // },
 };
 </script>
 

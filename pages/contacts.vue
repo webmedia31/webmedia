@@ -6,33 +6,56 @@
       <div class="column">
         <FeedbackForm />
       </div>
-      <div class="column">
-        <p>{{ "callToUs" | localize }}</p>
-        <h2>8-800-250-19-09</h2>
-        <p>{{ "writeToUs" | localize }}</p>
-        <h2>Info@webmedia31.ru</h2>
-        <p>{{ "comeToUs" | localize }}</p>
-        <h2>{{ "address" | localize }}Белгород, ул.Шаландина, 1а, 3 этаж, пн-пт: 9:00 - 18:00</h2>
+      <div class="column contacts-info">
+        <div class="contacts-info__item">
+
+
+          <p class="info-label" >{{ "callToUsLabel" | localize }}</p>
+
+
+          <p class="info-value">8-800-250-19-09</p>
+        </div>
+        <div class="contacts-info__item">
+          <p class="info-label">{{ "writeToUsLabel" | localize }}</p>
+          <p class="info-value">Info@webmedia31.ru</p>
+        </div>
+        <div class="contacts-info__item">
+          <p class="info-label">{{ "comeToUsLabel" | localize }}</p>
+          <p class="info-value">{{ "address" | localize }}</p>
+        </div>
       </div>
     </div>
-
-
-
   </div>
 </template>
 
 <script>
-import localize from "@/filters/localize.filter";
 
 export default {
+  name: 'contacts',
+  layout: 'default',
   head() {
     return {
-      title: "Контакты виноградника Вина Град",
-      meta: [
-        // {name: 'twitter:title', contetnt: this.sort.title},
-        // {name: 'twitter.description', contetnt: this.sort.content},
-      ]
+      title: "Контакты",
+      meta: [{hid: 'description', name: 'description', content: "Описание страницы Контакты"}]
     };
   }
 };
 </script>
+
+<style scoped>
+.contacts-info__item {
+  margin: 50px 0px;
+}
+.info-label {
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.07em;
+  color: #9e9e9e;
+}
+.info-value {
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: 0.12em;
+  color: #d0d0d0;
+}
+</style>

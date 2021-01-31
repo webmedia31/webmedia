@@ -20,7 +20,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '@/plugins/splide-carousel-vue', mode: 'client' },
-    { src: '@filters/localize.filter' }
+    // { src: '@filters/localize.filter' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -39,6 +39,25 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: "AIzaSyAnH7Agi2IvEKXixzWcRDM8CsCb5Avz8tM",
+          authDomain: "webmedia31ru.firebaseapp.com",
+          databaseURL: "https://webmedia31ru-default-rtdb.europe-west1.firebasedatabase.app",
+          projectId: "webmedia31ru",
+          storageBucket: "webmedia31ru.appspot.com",
+          messagingSenderId: "555481221015",
+          appId: "1:555481221015:web:4aa33be70825b39225e6d2",
+          measurementId: "G-FCPZR27CFD"
+        },
+        services: {
+          auth: true // Just as example. Can be any other service.
+        }
+      }
+    ]
 
   ],
 

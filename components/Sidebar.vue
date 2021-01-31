@@ -22,7 +22,7 @@
             v-for="(item, key) of sideBarItems"
             :key="key"
           >
-            <NuxtLink :to="item.to" exact-active-class="is-active">
+            <NuxtLink no-prefetch :to="item.to" exact-active-class="is-active">
               <b-icon :icon="item.icon" /> {{ item.title }}
             </NuxtLink>
           </li>
@@ -31,9 +31,10 @@
 
       <div class="sidebar__footer">
         <SocialLinks />
-        <NuxtLink class="politics_link" :to="{ path: '/politics' }"
-          >Политика конфиденциальности</NuxtLink
-        >
+
+        <NuxtLink no-prefetch class="politics_link" :to="{ path: '/politics' }">
+          Политика конфиденциальности
+        </NuxtLink>
       </div>
     </b-sidebar>
 
@@ -133,10 +134,7 @@ export default {
   border-top: 1px solid #000;
 }
 
-.social_links a {
-  font-size: 16px;
-  color: #000 !important;
-}
+
 .politics_link {
   letter-spacing: 0.07em;
   font-size: 12px;
