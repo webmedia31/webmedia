@@ -12,6 +12,7 @@
 
 <script>
 export default {
+  name: "default",
   head() {
     return {
       titleTemplate: "%s | Webmedia",
@@ -28,10 +29,3 @@ export default {
 };
 </script>
 
-<style>
-body {
-  /* background-image: url('~assets/home_bg_fullhd.jpg') !important;
-    background-size: cover; */
-  /* background-color: grey; */
-}
-</style>

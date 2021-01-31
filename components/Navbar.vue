@@ -3,7 +3,21 @@
     <div class="container">
       <Logo />
 
+
       <ul class="navMenu">
+
+        <div v-if="$auth.loggedIn">
+          <NuxtLink :to="{ name: 'logout' }">Выйти</NuxtLink>
+        </div>
+        <div v-else>
+          <NuxtLink :to="{ name: 'login' }">Войти</NuxtLink>
+          <NuxtLink :to="{ name: 'register' }">Зарегистрироваться</NuxtLink>
+        </div>
+
+
+
+
+
         <NuxtLink
           no-prefetch
           v-for="(item, index) in navBarItems"

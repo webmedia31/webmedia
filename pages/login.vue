@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="card auth-card" @submit.prevent="submitLoginForm">
+    <!-- <form class="card auth-card" @submit.prevent="submitLoginForm">
       <div class="card-content">
         <span class="card-title">Домашняя бухгалтерия</span>
         <div class="input-field">
@@ -68,12 +68,15 @@
           <router-link to="/register">Зарегистрироваться</router-link>
         </p>
       </div>
-    </form>
+    </form> -->
+
+    <NuxtLink :to="{ path: '/' }">На главную</NuxtLink>
+
+
   </div>
 </template>
 
 <script>
-import { email, required, minLength } from "vuelidate/lib/validators";
 import notices from "../utils/notices"
 
 export default {
@@ -91,10 +94,7 @@ export default {
     email: "",
     password: "",
   }),
-  validations: {
-    email: { required, email },
-    password: { required, minLength: minLength(6) },
-  },
+
   methods: {
     async submitLoginForm() {
       if (this.$v.$invalid) {

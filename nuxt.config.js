@@ -20,7 +20,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '@/plugins/splide-carousel-vue', mode: 'client' },
-    // { src: '@filters/localize.filter' }
+    // { src: '@/plugins/vuelidate.plugin' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -33,14 +33,10 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/buefy
-    'nuxt-buefy',
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
-
-    [
+    'nuxt-buefy', // https://go.nuxtjs.dev/buefy
+    '@nuxtjs/axios', // https://go.nuxtjs.dev/axios
+    '@nuxtjs/pwa', // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/auth-next', [
       '@nuxtjs/firebase',
       {
         config: {
@@ -54,11 +50,10 @@ export default {
           measurementId: "G-FCPZR27CFD"
         },
         services: {
-          auth: true // Just as example. Can be any other service.
+          auth: false // Just as example. Can be any other service.
         }
       }
     ]
-
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

@@ -48,7 +48,7 @@
 export default {
   data: () => ({
     sidebarConfig: {
-      open: true,
+      open: false,
       overlay: false,
       fullheight: true,
       fullwidth: false,
@@ -90,7 +90,7 @@ export default {
 </script>
 
 <style>
-.sidebar-content  * {
+.sidebar-content * {
   color: #000;
 }
 .sidebar_closelink {
@@ -134,23 +134,17 @@ export default {
   border-top: 1px solid #000;
 }
 
-
 .politics_link {
   letter-spacing: 0.07em;
   font-size: 12px;
   color: #9f9f9f;
   padding: 7px 0px;
-
 }
-
-
 
 /** hide main top nav on mobile and tablet */
 .navMenu {
   display: none;
 }
-
-
 
 .b-sidebar .sidebar-content {
   width: 100%;
@@ -160,7 +154,6 @@ export default {
 .sidebar__footer {
   padding: 0px 20px;
 }
-
 
 @media (min-width: 340px) {
   .b-sidebar .sidebar-content {
