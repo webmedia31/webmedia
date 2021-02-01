@@ -20,7 +20,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '@/plugins/splide-carousel-vue', mode: 'client' },
-    // { src: '@/plugins/vuelidate.plugin' },
+    { src: '@/plugins/vee-validate' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -53,7 +53,8 @@ export default {
           auth: false // Just as example. Can be any other service.
         }
       }
-    ]
+    ],
+
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -68,7 +69,11 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ['@splidejs/vue-splide'],
+    transpile: [
+      '@splidejs/vue-splide',
+      "vee-validate/dist/rules"
+    ],
+
   },
 
   loading: {

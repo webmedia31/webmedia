@@ -1,5 +1,24 @@
 <template>
   <div>
+    <form>
+      <b-field label="Имя">
+        <b-input v-model="name"></b-input>
+      </b-field>
+
+      <b-field label="Email">
+        <b-input v-model="email"></b-input>
+      </b-field>
+
+      <b-field>
+        <p class="control">
+          <b-button
+            @click="submitForm(userInfo)"
+            type="is-primary"
+          >Зарегистрироваться</b-button>
+        </p>
+      </b-field>
+    </form>
+
     <!-- <form class="card auth-card" @submit.prevent="submitRegisterForm">
       <div class="card-content">
         <span class="card-title">Домашняя бухгалтерия</span>
@@ -86,7 +105,7 @@
 
         <p class="center">
           Уже есть аккаунт?
-          <router-link to="/login">Войти!</router-link>
+          <NuxtLink :to="{ name: 'login' }">Войти</NuxtLink>
         </p>
       </div>
     </form> -->
@@ -101,34 +120,34 @@ export default {
   layout: "auth",
   metaInfo() {
     return {
-      title: this.$title('RegisterTitle'),
-    }
+      title: this.$title("RegisterTitle")
+    };
   },
 
   data: () => ({
     email: "",
     password: "",
-    name: '',
+    name: "",
     agreement: false
   }),
   methods: {
     async submitRegisterForm() {
       if (this.$v.$invalid) {
-        this.$v.$touch()
-        return
+        this.$v.$touch();
+        return;
       }
 
       const formData = {
         email: this.email,
         password: this.password,
         name: this.name
-      }
+      };
 
       try {
-        await this.$store.dispatch('register', formData)
+        await this.$store.dispatch("register", formData);
         this.$router.push("/");
       } catch (e) {}
-    },
+    }
   }
 };
 </script>
