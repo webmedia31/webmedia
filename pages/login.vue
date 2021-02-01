@@ -8,15 +8,11 @@
 </template>
 
 <script>
-import UserAuthForm from '@/components/UserAuthForm'
 // import notices from "../utils/notices";
 
 export default {
   name: "login",
   layout: "default",
-  components: {
-    UserAuthForm
-  },
   // metaInfo() {
   //   return {
   //     title: this.$title('LoginTitle'),
