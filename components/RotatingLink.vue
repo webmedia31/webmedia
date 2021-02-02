@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    <div class="rotating_link">
       <svg
         space="preserve"
         version="1.1"
@@ -33,6 +33,7 @@
           </text>
         </g>
       </svg>
+    </div>
 
     <img src="~/static/rounded_link_arrow.svg" />
     <img src="~/static/rounded_link_divider.svg" />
@@ -50,17 +51,21 @@ export default {
 </script>
 
 <style lang="scss">
-.lnkDivider {
-  position: relative;
-  top: -100px;
+.rotating_link {
+  display: block;
+    width: 165px;
+    height: 165px;
+    margin: 0 auto;
+    /* overflow: hidden; */
+    background: #CCC;
 }
-
 svg {
+  top: -165px;
+  left: -165px;
+  position: relative;
+
   width: 494px;
   height: auto;
-  // position: absolute;
-  // bottom: -242px;
-  // right: -244px;
   -moz-animation: rotate 8s linear infinite;
   -webkit-animation: rotate 8s linear infinite;
   animation: rotate 8s linear infinite;
@@ -69,6 +74,10 @@ text {
   font-size: 10px;
   letter-spacing: 1.15px;
   font-weight: bold;
+}
+.lnkDivider {
+  position: relative;
+  top: -100px;
 }
 
 @keyframes rotate {
