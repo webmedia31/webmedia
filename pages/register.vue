@@ -7,8 +7,13 @@
 </template>
 
 <script>
-import { email, required, minLength } from "vuelidate/lib/validators";
 export default {
+  name: "register",
+  head() {
+    return {
+      title: "Регистрация"
+    };
+  },
   methods: {
     registerUser($v) {
       console.log("Register button pressed");

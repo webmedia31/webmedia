@@ -10,6 +10,7 @@
       </p>
     </div>
 
+    <RotatingLink />
 
   </section>
 </template>

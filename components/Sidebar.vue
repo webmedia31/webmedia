@@ -32,9 +32,7 @@
       <div class="sidebar__footer">
         <SocialLinks />
 
-        <NuxtLink no-prefetch class="politics_link" :to="{ path: '/politics' }">
-          Политика конфиденциальности
-        </NuxtLink>
+        <PoliticsLink />
       </div>
     </b-sidebar>
 
@@ -45,7 +43,9 @@
 </template>
 
 <script>
+import politics from '../pages/politics.vue';
 export default {
+  components: { politics },
   data: () => ({
     sidebarConfig: {
       open: false,
@@ -134,12 +134,7 @@ export default {
   border-top: 1px solid #000;
 }
 
-.politics_link {
-  letter-spacing: 0.07em;
-  font-size: 12px;
-  color: #9f9f9f;
-  padding: 7px 0px;
-}
+
 
 /** hide main top nav on mobile and tablet */
 .navMenu {

@@ -1,5 +1,5 @@
 <template>
-  <form class="auth-card" @submit.prevent="submitRegisterForm">
+  <form class="auth-card" @submit.prevent="submitLoginForm">
     <div class="card-content">
 
       <b-field
@@ -23,56 +23,33 @@
         <b-input v-model.trim="password"></b-input>
       </b-field>
 
-      <b-field
-        label="Имя"
-        :type="{ 'is-danger': $v.name.$dirty && $v.name.$invalid }"
-        :message="{'Введиет имя': $v.name.$dirty && !$v.name.required}">
-        <b-input v-model.trim="password"></b-input>
-      </b-field>
-
-      <p>
-        <label>
-          <input v-model="agreement" type="checkbox" />
-          <span>С условиями </span>
-        </label>
-      </p>
-
-
       <b-button
           class="btn"
-          :disabled="!this.agreement || $v.$anyError"
+          :disabled="$v.$anyError"
           type="is-info"
           native-type="submit"
         >
-          Зарегистрироваться
+          Войти
         </b-button>
     </div>
   </form>
 </template>
 
 <script>
-import { email, required, minLength } from "vuelidate/lib/validators";
+import { email, required } from "vuelidate/lib/validators";
 
 export default {
-
   data: () => ({
     email: "",
     password: "",
-    name: "",
-    agreement: true
   }),
   validations: {
     email: { required, email },
-    password: { required, minLength: minLength(6) },
-    name: { required },
-    agreement: { checked: v => v }
+    password: { required },
   },
   methods: {
 
-
-
-
-    async submitRegisterForm() {
+    async submitLoginForm() {
 
         console.log('!!!!!!!!!!!!!!');
 
