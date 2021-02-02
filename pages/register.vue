@@ -2,7 +2,7 @@
   <div>
     <h1>Регистрация</h1>
 
-    <AuthForm buttonText="Зарегистрироваться" :submitForm="registerUser" />
+    <RegisterForm />
   </div>
 </template>
 
@@ -13,25 +13,16 @@ export default {
     registerUser($v) {
       console.log("Register button pressed");
       if ($v.$invalid) {
-        $v.$touch()
+        $v.$touch();
 
+        console.log("email dirty: " + $v.email.$dirty);
+        console.log("email invalid: " + $v.email.$invalid);
+        console.log("error: " + $v.email.$error);
 
+        console.log($v);
 
-
-      console.log('email dirty: ' + $v.email.$dirty );
-      console.log('email invalid: ' + $v.email.$invalid );
-      console.log('error: ' + $v.email.$error );
-
-      console.log($v);
-
-        return
+        return;
       }
-
-
-
-
-
-
     }
   }
 };
