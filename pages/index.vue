@@ -12,6 +12,11 @@
 
     <RotatingLink />
 
+    <RotatingLinkSvg />
+
+
+<RotatingLinkVariant />
+
   </section>
 </template>
 
