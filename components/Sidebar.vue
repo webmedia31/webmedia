@@ -32,7 +32,7 @@
       <div class="sidebar__footer">
         <SocialLinks />
 
-        <PoliticsLink />
+        <NuxtLink no-prefetch class="politics_link" :to="{ path: '/politics' }">Политика конфиденциальности</NuxtLink>
       </div>
     </b-sidebar>
 

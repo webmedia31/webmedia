@@ -57,6 +57,8 @@
       <p>С кем вы будете побеждать</p>
       <hr>
 
+
+
       <Teammate  v-for="person of 5" :num="person" :key="person"/>
 
 

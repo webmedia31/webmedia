@@ -1,26 +1,26 @@
 <template>
-  <form class="auth-card" @submit.prevent="submitLoginForm">
+  <form class="auth-card" @submit.prevent="submitLoginForm(userInfo)">
     <div class="card-content">
 
       <b-field
         label="Email"
-        :type="{ 'is-danger': $v.email.$invalid && $v.email.$dirty }"
+        :type="{ 'is-danger': $v.userInfo.email.$invalid && $v.userInfo.email.$dirty }"
         :message="{
-          'Введиет Email': $v.email.$dirty && !$v.email.required,
-          'Введите корректный Email': $v.email.$dirty && !$v.email.email
+          'Введиет Email': $v.userInfo.email.$dirty && !$v.userInfo.email.required,
+          'Введите корректный Email': $v.userInfo.email.$dirty && !$v.userInfo.email.email
         }">
-        <b-input v-model.trim="email"></b-input>
+        <b-input v-model.trim="userInfo.email"></b-input>
       </b-field>
 
 
       <b-field
         label="Пароль"
-        :type="{ 'is-danger': $v.password.$dirty && $v.password.$invalid }"
+        :type="{ 'is-danger': $v.userInfo.password.$dirty && $v.userInfo.password.$invalid }"
         :message="{
-          'Введиет пароль': $v.password.$dirty && !$v.password.required,
-          'Пароль не должен быть короче 6  символов': $v.password.$dirty && !$v.password.minLength,
+          'Введиет пароль': $v.userInfo.password.$dirty && !$v.userInfo.password.required,
+          'Пароль не должен быть короче 6  символов': $v.userInfo.password.$dirty && !$v.userInfo.password.minLength,
         }">
-        <b-input v-model.trim="password"></b-input>
+        <b-input v-model.trim="userInfo.password"></b-input>
       </b-field>
 
       <b-button
@@ -40,24 +40,30 @@ import { email, required } from "vuelidate/lib/validators";
 
 export default {
   data: () => ({
-    email: "",
-    password: "",
+    userInfo: {
+      email: "",
+      password: ""
+    }
   }),
   validations: {
-    email: { required, email },
-    password: { required },
+    userInfo: {
+      email: { required, email },
+      password: { required },
+    }
   },
   methods: {
 
-    async submitLoginForm() {
+    async submitLoginForm(userInfo) {
 
-        console.log('!!!!!!!!!!!!!!');
+        console.log(userInfo);
+
+        console.log(this.$v);
 
         this.$v.$touch();
 
-        console.log("email dirty: " + this.$v.email.$dirty);
-        console.log("email invalid: " + this.$v.email.$invalid);
-        console.log("error: " + this.$v.email.$error);
+        // console.log("email dirty: " + this.$v.email.$dirty);
+        // console.log("email invalid: " + this.$v.email.$invalid);
+        // console.log("error: " + this.$v.email.$error);
 
         console.log(this.$v);
 

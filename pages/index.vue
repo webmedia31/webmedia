@@ -10,11 +10,10 @@
       </p>
     </div>
 
-    <RotatingLink :text="`Наши проекты`"/>
-    <RotatingLink :text="`Наша команда`"/>
+    <RotatingLink :text="`Наши проекты`" :textOffset="5"/>
 
-    <RotatingLink :text="`Our team`"/>
-    <RotatingLink :text="`Our projects`"/>
+    <RotatingLink :text="`Our team`" :textOffset="40"/>
+    <RotatingLink :text="`Our projects`" :textOffset="11"/>
 
     <!-- <RotatingLinkSvg /> -->
 
