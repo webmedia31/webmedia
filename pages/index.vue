@@ -10,12 +10,15 @@
       </p>
     </div>
 
-    <RotatingLink />
+    <RotatingLink :text="`Наши проекты`"/>
+    <RotatingLink :text="`Наша команда`"/>
 
-    <RotatingLinkSvg />
+    <RotatingLink :text="`Our team`"/>
+    <RotatingLink :text="`Our projects`"/>
+
+    <!-- <RotatingLinkSvg /> -->
 
 
-<RotatingLinkVariant />
 
   </section>
 </template>
