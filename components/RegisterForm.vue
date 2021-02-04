@@ -12,7 +12,6 @@
         <b-input v-model.trim="userInfo.email"></b-input>
       </b-field>
 
-
       <b-field
         label="Пароль"
         :type="{ 'is-danger': $v.userInfo.password.$dirty && $v.userInfo.password.$invalid }"
@@ -37,7 +36,6 @@
         </label>
       </p>
 
-
       <b-button
           class="btn"
           :disabled="!this.userInfo.agreement || $v.$anyError"
@@ -54,7 +52,6 @@
 import { email, required, minLength } from "vuelidate/lib/validators";
 
 export default {
-
   data: () => ({
     userInfo: {
       email: "",
@@ -72,10 +69,6 @@ export default {
     },
   },
   methods: {
-
-
-
-
     async submitRegisterForm() {
 
         console.log('!!!!!!!!!!!!!!');
