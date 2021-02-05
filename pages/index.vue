@@ -10,10 +10,12 @@
       </p>
     </div>
 
-    <RotatingLink :text="`Наши проекты`" :textOffset="5"/>
+<!-- DISTORTION EFFECT -->
+<!-- https://codepen.io/robin-dela/pen/KKPYoBq -->
 
-    <RotatingLink :text="`Our team`" :textOffset="40"/>
-    <RotatingLink :text="`Our projects`" :textOffset="11"/>
+    <RotatingLink :text="`Наши проекты`" :link="{ name: 'portfolio' }" :textOffset="5"/>
+    <RotatingLink :text="`Our team`" :link="{ name: 'about' }" :textOffset="40"/>
+    <RotatingLink :text="`Our projects`" :link="{ name: 'portfolio' }" :textOffset="11"/>
 
     <!-- <RotatingLinkSvg /> -->
 
@@ -24,7 +26,7 @@
 
 <script>
 export default {
-  name: "aboutPage",
+  name: "home",
   layout: "default",
   head() {
     return {

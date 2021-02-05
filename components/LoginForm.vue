@@ -2,7 +2,29 @@
   <form class="auth-card" @submit.prevent="submitLoginForm(userInfo)">
     <div class="card-content">
 
-      <b-field
+
+
+<a class="waves-effect waves-light btn">button</a>
+
+
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">Telephone</label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+      <!-- <b-field
         label="Email"
         :type="{ 'is-danger': $v.userInfo.email.$invalid && $v.userInfo.email.$dirty }"
         :message="{
@@ -30,7 +52,7 @@
           native-type="submit"
         >
           Войти
-        </b-button>
+        </b-button> -->
     </div>
   </form>
 </template>

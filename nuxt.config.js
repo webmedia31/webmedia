@@ -14,13 +14,17 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+
     '@/assets/styles/style_global.css',
+    'materialize-css/dist/css/materialize.min.css'
+
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '@/plugins/splide-carousel-vue', mode: 'client' },
-    { src: '~/plugins/vuelidate.plugin' }
+    { src: '~/plugins/vuelidate.plugin' },
+    { src: '~/plugins/materialize.lugin.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -33,28 +37,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    'nuxt-buefy', // https://go.nuxtjs.dev/buefy
     '@nuxtjs/axios', // https://go.nuxtjs.dev/axios
     '@nuxtjs/pwa', // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/auth-next', [
-      '@nuxtjs/firebase',
-      {
-        config: {
-          apiKey: "AIzaSyAnH7Agi2IvEKXixzWcRDM8CsCb5Avz8tM",
-          authDomain: "webmedia31ru.firebaseapp.com",
-          databaseURL: "https://webmedia31ru-default-rtdb.europe-west1.firebasedatabase.app",
-          projectId: "webmedia31ru",
-          storageBucket: "webmedia31ru.appspot.com",
-          messagingSenderId: "555481221015",
-          appId: "1:555481221015:web:4aa33be70825b39225e6d2",
-          measurementId: "G-FCPZR27CFD"
-        },
-        services: {
-          auth: false // Just as example. Can be any other service.
-        }
-      }
-    ],
-
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

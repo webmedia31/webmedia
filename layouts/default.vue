@@ -25,7 +25,10 @@ export default {
       ]
     };
   },
-  data: () => ({})
+  data: () => ({}),
+  mounted () {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {});
+  }
 };
 </script>
-

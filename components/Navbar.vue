@@ -6,7 +6,7 @@
 
       <ul class="navMenu">
 
-        <div v-if="$auth.loggedIn">
+        <div v-if="1!==1">
           <NuxtLink :to="{ name: 'logout' }">Выйти</NuxtLink>
         </div>
         <div v-else>

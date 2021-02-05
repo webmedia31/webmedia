@@ -1,3 +1,4 @@
 <template>
   <h1>Калькулятор</h1>
+  <!-- https://codepen.io/hexagoncircle/pen/oNLZmvV -->
 </template>

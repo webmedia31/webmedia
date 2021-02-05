@@ -1,13 +1,27 @@
 <template>
-  <section class="sidebar">
-    <b-sidebar
-      :fullheight="sidebarConfig.fullheight"
-      :fullwidth="sidebarConfig.fullwidth"
-      :overlay="sidebarConfig.overlay"
-      :right="sidebarConfig.right"
-      v-model="sidebarConfig.open"
-    >
-      <div class="sidebar__header">
+  <section>
+
+<nav> <!-- navbar content here  --> </nav>
+
+  <ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="images/office.jpg">
+      </div>
+      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+      <a href="#name"><span class="white-text name">John Doe</span></a>
+      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  </ul>
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+    <!-- START SIDEBAR CONTENT -->
+      <!-- <div class="sidebar__header">
         <LangSwitcher />
 
         <div class="sidebar_closelink" @click="sidebarConfig.open = false">
@@ -23,7 +37,7 @@
             :key="key"
           >
             <NuxtLink no-prefetch :to="item.to" exact-active-class="is-active">
-              <b-icon :icon="item.icon" /> {{ item.title }}
+              {{ item.title }}
             </NuxtLink>
           </li>
         </ul>
@@ -33,12 +47,22 @@
         <SocialLinks />
 
         <NuxtLink no-prefetch class="politics_link" :to="{ path: '/politics' }">Политика конфиденциальности</NuxtLink>
-      </div>
-    </b-sidebar>
+      </div> -->
+    <!-- END SIDEBAR CONTENT -->
+
+
+
+
+
+
 
     <div @click="sidebarConfig.open = true">
       <NavBurger />
     </div>
+
+
+
+
   </section>
 </template>
 
@@ -47,13 +71,7 @@ import politics from '../pages/politics.vue';
 export default {
   components: { politics },
   data: () => ({
-    sidebarConfig: {
-      open: false,
-      overlay: false,
-      fullheight: true,
-      fullwidth: false,
-      right: true
-    },
+
     sideBarItems: [
       {
         title: "Команда",
@@ -85,6 +103,10 @@ export default {
     sidebarNavUsed() {
       this.sidebarConfig.open = false;
     }
+  },
+  mounted () {
+    // var elems = document.querySelectorAll('.sidenav');
+    // var instances = window.M.Sidenav.init(elems, options);
   }
 };
 </script>

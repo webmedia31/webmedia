@@ -2,7 +2,9 @@
   <form class="auth-card" @submit.prevent="submitRegisterForm">
     <div class="card-content">
 
-      <b-field
+
+
+      <!-- <b-field
         label="Email"
         :type="{ 'is-danger': $v.userInfo.email.$invalid && $v.userInfo.email.$dirty }"
         :message="{
@@ -43,7 +45,7 @@
           native-type="submit"
         >
           Зарегистрироваться
-        </b-button>
+        </b-button> -->
     </div>
   </form>
 </template>
