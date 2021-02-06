@@ -67,7 +67,7 @@
     </ul>
 
     <div class="call_to_cation">Узнай больше о нашей команде!</div>
-    <RotatingLink :text="`Наша команда`" :textOffset="7" />
+    <RotatingLink :text="`Наша команда`"  :link="{ name: 'about' }" :textOffset="7" />
 
 
 

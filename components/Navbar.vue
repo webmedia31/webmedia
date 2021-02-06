@@ -1,36 +1,38 @@
 <template>
-  <nav class="navbar">
-    <div class="container">
-      <Logo />
+
+  <div>
+    <nav class="navbar ">
+        <div class="container">
+          <Logo />
+
+          <NavBurger />
 
 
-      <ul class="navMenu">
+          <!-- <div v-if="1!==1">
+            <NuxtLink :to="{ name: 'logout' }">Выйти</NuxtLink>
+          </div>
+          <div v-else>
+            <NuxtLink :to="{ name: 'login' }">Войти</NuxtLink>
+            <NuxtLink :to="{ name: 'register' }">Зарегистрироваться</NuxtLink>
+          </div> -->
 
-        <div v-if="1!==1">
-          <NuxtLink :to="{ name: 'logout' }">Выйти</NuxtLink>
+          <ul class="navbar-menu right hide-on-med-and-down">
+            <li v-for="(item, index) in navBarItems" :key="index">
+              <NuxtLink
+                no-prefetch
+                :to="item.to"
+              >
+                {{ item.title }}
+              </NuxtLink>
+            </li>
+          </ul>
         </div>
-        <div v-else>
-          <NuxtLink :to="{ name: 'login' }">Войти</NuxtLink>
-          <NuxtLink :to="{ name: 'register' }">Зарегистрироваться</NuxtLink>
-        </div>
+    </nav>
 
+    <Sidebar />
 
+  </div>
 
-
-
-        <NuxtLink
-          no-prefetch
-          v-for="(item, index) in navBarItems"
-          :key="index"
-          :to="item.to"
-        >
-          {{ item.title }}
-        </NuxtLink>
-      </ul>
-
-      <Sidebar />
-    </div>
-  </nav>
 </template>
 
 <script>
@@ -50,7 +52,9 @@ export default {
         to: { name: "articles" }
       }
     ]
-  })
+  }),
+
+
 };
 </script>
 
@@ -59,15 +63,22 @@ export default {
   background-color: transparent;
 
 }
-.navbar .container {
+.navbar .sidenav-trigger {
+  float: right;
+  display: flex;
+}
+
+.navbar-menu {
+  display: flex;
+}
+
+/* .navbar .container {
 display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.navbar-burger {
-  display: block;
-}
-.navbar-burger:hover {
+} */
+
+/*.navbar-burger:hover {
   background-color: transparent;
 }
 .navMenu a {
@@ -79,5 +90,11 @@ display: flex;
 }
 .navMenu a:hover {
   text-decoration: underline;
+} */
+
+
+nav a.sidenav-trigger {
+  display: flex;
+  align-items: center;
 }
 </style>

@@ -1,64 +1,61 @@
 <template>
-  <form class="auth-card" @submit.prevent="submitLoginForm(userInfo)">
-    <div class="card-content">
+  <div>
 
+    <form @submit.prevent="submitLoginForm(userInfo)">
+      <div class="card-content">
 
-
-<a class="waves-effect waves-light btn">button</a>
-
-
-<div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">First Name</label>
+        <div class="input-field">
+          <input
+            id="email"
+            type="text"
+            v-model.trim="userInfo.email"
+            :class="{invalid:($v.userInfo.email.$dirty && !$v.userInfo.email.required) || ($v.userInfo.email.$dirty && !$v.userInfo.email.email)}"
+          />
+          <label for="email">Email</label>
+          <small v-if="$v.userInfo.email.$dirty && !$v.userInfo.email.required" class="helper-text invalid">Введите Email</small>
+          <small v-else-if="$v.userInfo.email.$dirty && !$v.userInfo.email.email" class="helper-text invalid">Введите корректный Email</small>
         </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">phone</i>
-          <input id="icon_telephone" type="tel" class="validate">
-          <label for="icon_telephone">Telephone</label>
+
+
+        <div class="input-field">
+          <input
+            id="password"
+            type="password"
+            v-model.trim="userInfo.password"
+            :class="{invalid:($v.userInfo.password.$dirty && !$v.userInfo.password.required) || ($v.userInfo.password.$dirty && !$v.userInfo.password.minLength),}"/>
+          <label for="password">Пароль</label>
+          <small
+            v-if="$v.userInfo.password.$dirty && !$v.userInfo.password.required"
+            class="helper-text invalid"
+            >Введите пароль</small>
+          <small
+            v-else-if="$v.userInfo.password.$dirty && !$v.userInfo.password.minLength"
+            class="helper-text invalid"
+            >Пароль не должен быть короче {{$v.userInfo.password.$params.minLength.min}} символов, сейчас {{userInfo.password.length}}</small>
         </div>
       </div>
+
+      <div class="card-action">
+        <div>
+          <button
+            class="btn waves-effect waves-light auth-submit"
+            type="submit">
+            Войти
+          </button>
+        </div>
+
+        <p class="center">
+          Нет аккаунта?
+          <NuxtLink :to="{name: 'register'}">Зарегистрироваться</NuxtLink>
+        </p>
+      </div>
     </form>
+
   </div>
-
-      <!-- <b-field
-        label="Email"
-        :type="{ 'is-danger': $v.userInfo.email.$invalid && $v.userInfo.email.$dirty }"
-        :message="{
-          'Введиет Email': $v.userInfo.email.$dirty && !$v.userInfo.email.required,
-          'Введите корректный Email': $v.userInfo.email.$dirty && !$v.userInfo.email.email
-        }">
-        <b-input v-model.trim="userInfo.email"></b-input>
-      </b-field>
-
-
-      <b-field
-        label="Пароль"
-        :type="{ 'is-danger': $v.userInfo.password.$dirty && $v.userInfo.password.$invalid }"
-        :message="{
-          'Введиет пароль': $v.userInfo.password.$dirty && !$v.userInfo.password.required,
-          'Пароль не должен быть короче 6  символов': $v.userInfo.password.$dirty && !$v.userInfo.password.minLength,
-        }">
-        <b-input v-model.trim="userInfo.password"></b-input>
-      </b-field>
-
-      <b-button
-          class="btn"
-          :disabled="$v.$anyError"
-          type="is-info"
-          native-type="submit"
-        >
-          Войти
-        </b-button> -->
-    </div>
-  </form>
 </template>
 
 <script>
-import { email, required } from "vuelidate/lib/validators";
+import { email, required, minLength } from "vuelidate/lib/validators";
 
 export default {
   data: () => ({
@@ -70,28 +67,24 @@ export default {
   validations: {
     userInfo: {
       email: { required, email },
-      password: { required },
+      password: { required, minLength: minLength(6) }
     }
   },
   methods: {
-
     async submitLoginForm(userInfo) {
+      console.log(userInfo);
 
-        console.log(userInfo);
+      console.log(this.$v);
 
-        console.log(this.$v);
+      this.$v.$touch();
 
-        this.$v.$touch();
+      // console.log("email dirty: " + this.$v.email.$dirty);
+      // console.log("email invalid: " + this.$v.email.$invalid);
+      // console.log("error: " + this.$v.email.$error);
 
-        // console.log("email dirty: " + this.$v.email.$dirty);
-        // console.log("email invalid: " + this.$v.email.$invalid);
-        // console.log("error: " + this.$v.email.$error);
+      console.log(this.$v);
 
-        console.log(this.$v);
-
-        return;
-
-
+      return;
 
       // console.log("!!!!!!!!!!");
       // if (this.$v.$invalid) {
@@ -99,16 +92,16 @@ export default {
       //   return;
       // }
 
-    //   const formData = {
-    //     email: this.email,
-    //     password: this.password,
-    //     name: this.name
-    //   };
+      //   const formData = {
+      //     email: this.email,
+      //     password: this.password,
+      //     name: this.name
+      //   };
 
-    //   try {
-    //     await this.$store.dispatch("register", formData);
-    //     this.$router.push("/");
-    //   } catch (e) {}
+      //   try {
+      //     await this.$store.dispatch("register", formData);
+      //     this.$router.push("/");
+      //   } catch (e) {}
     }
   }
 };

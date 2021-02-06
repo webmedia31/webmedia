@@ -1,69 +1,33 @@
 <template>
-  <section>
+  <div class="sidenav no-autoinit" id="mobile-menu">
+      <div class="sidebar__header">
+      <LangSwitcher />
 
-<nav> <!-- navbar content here  --> </nav>
-
-  <ul id="slide-out" class="sidenav">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="images/office.jpg">
+      <div class="sidebar_closelink" @click="closeSidebar">
+        Закрыть
       </div>
-      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-  </ul>
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-
-    <!-- START SIDEBAR CONTENT -->
-      <!-- <div class="sidebar__header">
-        <LangSwitcher />
-
-        <div class="sidebar_closelink" @click="sidebarConfig.open = false">
-          Закрыть
-        </div>
-      </div>
-
-      <div class="sidebar__nav">
-        <ul class="menu-list">
-          <li
-            @click="sidebarNavUsed"
-            v-for="(item, key) of sideBarItems"
-            :key="key"
-          >
-            <NuxtLink no-prefetch :to="item.to" exact-active-class="is-active">
-              {{ item.title }}
-            </NuxtLink>
-          </li>
-        </ul>
-      </div>
-
-      <div class="sidebar__footer">
-        <SocialLinks />
-
-        <NuxtLink no-prefetch class="politics_link" :to="{ path: '/politics' }">Политика конфиденциальности</NuxtLink>
-      </div> -->
-    <!-- END SIDEBAR CONTENT -->
-
-
-
-
-
-
-
-    <div @click="sidebarConfig.open = true">
-      <NavBurger />
     </div>
 
+    <div class="sidebar__nav">
+      <ul class="menu-list">
+        <li
+          v-for="(item, key) of sideBarItems"
+          :key="key"
+          @click="closeSidebar"
+        >
+          <NuxtLink no-prefetch :to="item.to" exact-active-class="is-active">
+            {{ item.title }}
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
 
+    <div class="sidebar__footer">
+      <SocialLinks />
 
-
-  </section>
+      <NuxtLink no-prefetch class="politics_link" :to="{ path: '/politics' }">Политика конфиденциальности</NuxtLink>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -100,18 +64,33 @@ export default {
     ]
   }),
   methods: {
-    sidebarNavUsed() {
-      this.sidebarConfig.open = false;
+    closeSidebar(){
+      M.Sidenav.getInstance(document.querySelectorAll('.sidenav')[0]).close()
     }
   },
   mounted () {
-    // var elems = document.querySelectorAll('.sidenav');
-    // var instances = window.M.Sidenav.init(elems, options);
+    // initializing materialize sidebar
+    let el = document.querySelectorAll('.sidenav')[0]
+    setTimeout(() => {
+      M.Sidenav.init(el,
+        {
+          "edge": "right",
+          "inDuration": 300,
+          "outDuration": 250,
+          "preventScrolling": false
+        }
+    )}, 0 )
   }
 };
 </script>
 
 <style>
+.sidenav {
+  display: flex;
+  flex-direction: column;
+}
+
+
 .sidebar-content * {
   color: #000;
 }

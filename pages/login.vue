@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <h1>Вход</h1>
-    <LoginForm />
-
-    <NuxtLink :to="{ path: '/' }">На главную</NuxtLink>
+  <div class="row">
+    <div class="col s12 m4 offset-m4 l4 offset-l4">
+      <h1>Вход</h1>
+      <LoginForm />
+    </div>
   </div>
 </template>
 

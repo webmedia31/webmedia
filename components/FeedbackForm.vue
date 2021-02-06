@@ -1,8 +1,8 @@
 <template>
   <div>
-    <!-- https://buefy.org/documentation/input -->
-    <!-- https://bulma.io/documentation/columns/sizes/ -->
-    <b-field label="Ваше имя">
+
+
+    <!-- <b-field label="Ваше имя">
       <b-input v-model="form.name"></b-input>
     </b-field>
     <b-field label="Ваш номер телефона">
@@ -10,7 +10,7 @@
     </b-field>
     <b-field label="Комментарий">
       <b-input v-model="form.comment"></b-input>
-    </b-field>
+    </b-field> -->
   </div>
 </template>
 
