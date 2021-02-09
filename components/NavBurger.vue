@@ -1,7 +1,9 @@
 <template>
-  <div data-target="mobile-menu" class="sidenav-trigger">
-    Меню
-    <div class="navbar-burger">
+  <div class="d-flex align-center">
+    <span class="navbar-toogle-text">
+      Меню
+    </span>
+    <div class="navbar-burger d-flex align-center">
       <span class="navbar-burger__line"/>
       <span  class="navbar-burger__line"/>
       <span  class="navbar-burger__line"/>
@@ -10,14 +12,8 @@
 </template>
 
 <style scoped>
-.sidenav-trigger {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-.navbar-burger {
-  display: flex;
-  align-items: center;
+.navbar-toogle-text {
+  margin: 0px 15px;
 }
 .navbar-burger__line {
   width: 1px;

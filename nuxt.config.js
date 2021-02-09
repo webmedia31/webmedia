@@ -14,17 +14,13 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-
     '@/assets/styles/style_global.css',
-    'materialize-css/dist/css/materialize.min.css'
-
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '@/plugins/splide-carousel-vue', mode: 'client' },
     { src: '~/plugins/vuelidate.plugin' },
-    { src: '~/plugins/materialize.lugin.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -32,8 +28,11 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-
+    '@nuxtjs/vuetify',
   ],
+  vuetify: {
+    "theme": { dark: true },
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -53,7 +52,15 @@ export default {
           measurementId: "G-FCPZR27CFD"
         },
         services: {
-          auth: false // Just as example. Can be any other service.
+          auth: true,
+          // firestore: true,
+          // functions: true,
+          // storage: true,
+          database: true,
+          // messaging: true,
+          // performance: true,
+          // analytics: true,
+          // remoteConfig: true
         }
       }
     ]
@@ -80,5 +87,6 @@ export default {
   loading: {
     color: '#CCC',
     height: '3px'
-  }
+  },
+
 }

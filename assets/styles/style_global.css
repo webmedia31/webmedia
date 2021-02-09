@@ -1,3 +1,5 @@
+/* @import  */
+
 @font-face {
   font-family: 'GilroyRegular';
   src: url('../fonts/gilroy-regular.eot');
@@ -33,6 +35,11 @@ html {
 
 a {
   color: #FFF;
+  text-decoration: none;
+}
+
+a.nuxt-link-active {
+  text-decoration: underline;
 }
 
 h1 {
@@ -103,17 +110,23 @@ h3 {
 
 /* SIDEBAR STYLES */
 
+
+/*
 .b-sidebar .sidebar-content {
   justify-content: space-between;
 }
 
+
+/*
 .politics_link {
   letter-spacing: 0.07em;
   font-size: 12px;
   color: #9f9f9f;
   padding: 7px 0px;
-}
+} */
 
 .input-field .helper-text.invalid {
   color: #F44336;
 }
+
+*/ .politics_link {}

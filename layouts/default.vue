@@ -1,13 +1,13 @@
 <template>
-  <div class="default_layout">
-    <Navbar />
+<v-app>
+  <Navbar />
 
-    <section class="main-content">
-      <div class="  is-12">
-        <nuxt />
-      </div>
-    </section>
-  </div>
+  <v-main>
+    <v-container>
+      <nuxt />
+    </v-container>
+  </v-main>
+</v-app>
 </template>
 
 <script>
@@ -26,9 +26,8 @@ export default {
     };
   },
   data: () => ({}),
-  mounted () {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, {});
+  mounted() {
+    // this.$vuetify.theme.isDark = true
   }
 };
 </script>

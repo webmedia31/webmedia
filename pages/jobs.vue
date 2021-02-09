@@ -1,5 +1,14 @@
 <template>
   <section>
+
+<!-- TODO
+this rotating link in jobs.vue gets loading jobs.js on homepage (index.vue), 
+gets that effect on new pages, but doesn't get that effect at other existing pages 
+-->
+
+    <!-- <RotatingLink :text="`Наша команда`"  :link="{ name: 'about' }" :textOffset="7" /> -->
+
+
     <h1>
       Хотите работать и развиваться в сфере digital?<span class="dark"
         >С радостью поможем и будем развиваться вместе!</span
@@ -67,7 +76,8 @@
     </ul>
 
     <div class="call_to_cation">Узнай больше о нашей команде!</div>
-    <RotatingLink :text="`Наша команда`"  :link="{ name: 'about' }" :textOffset="7" />
+
+    
 
 
 

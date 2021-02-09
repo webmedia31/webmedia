@@ -1,5 +1,6 @@
 <template>
   <div>
+  
     <section class="intro">
       <p>Решаем любые задачи</p>
       <h1>{{ pageHeaderH1 }}</h1>

@@ -15,11 +15,11 @@
     "@splidejs/vue-splide": "^0.3.5",
     "core-js": "^3.8.2",
     "firebase": "^8.2.4",
-    "materialize-css": "^1.0.0-rc.2",
     "nuxt": "^2.14.12",
     "vuelidate": "^0.7.6"
   },
   "devDependencies": {
+    "@nuxtjs/vuetify": "^1.11.3",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.1"
   }
