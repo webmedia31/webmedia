@@ -5,8 +5,8 @@
       <Logo />
 
       <LangSwitcher :theme="`light`" />
-      <!-- <AuthLinks /> -->
 
+      <AuthLinks />
 
       <ul class="navbar-menu d-flex">
         <li v-for="(item, index) in navBarItems" :key="index">
@@ -21,7 +21,6 @@
       </button>
     </nav>
     <!-- NAVBAR END -->
-
 
     <!-- SIDEBAR -->
     <v-navigation-drawer v-model="drawer" absolute temporary right>
@@ -47,8 +46,8 @@
         <SocialLinks />
 
         <NuxtLink no-prefetch class="politics_link" :to="{ name: 'politics' }"
-          >Политика конфиденциальности</NuxtLink
-        >
+          >Политика конфиденциальности
+        </NuxtLink>
       </div>
     </v-navigation-drawer>
     <!-- SIDEBAR END -->
@@ -58,7 +57,7 @@
 <script>
 export default {
   data: () => ({
-    drawer: true,
+    drawer: false,
     sidebarItems: [
       {
         title: "Команда",
@@ -74,7 +73,7 @@ export default {
       },
       {
         title: "Вакансии",
-        to: '/jobs'
+        to: { name: "job" }
       },
       {
         title: "Контакты",
@@ -123,9 +122,6 @@ export default {
   text-decoration: underline;
 }
 
-
-
-
 /* sidebar */
 .sidebar-toggle {
   outline: none;
@@ -145,84 +141,77 @@ export default {
   justify-content: space-between;
 }
 
-
-
-
 .sidebar_closelink {
-   padding: 10px 50px 10px 10px;
-   cursor: pointer;
- }
- .sidebar_closelink::after {
-   display: block;
-   content: "";
-   position: relative;
-   width: 20px;
-   height: 1px;
-   left: 77px;
-   top: -12px;
-   background-color: #000;
- }
+  padding: 10px 50px 10px 10px;
+  cursor: pointer;
+}
+.sidebar_closelink::after {
+  display: block;
+  content: "";
+  position: relative;
+  width: 20px;
+  height: 1px;
+  left: 77px;
+  top: -12px;
+  background-color: #000;
+}
 
+.sidebar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  border-bottom: 1px solid #000;
+}
+.sidebar__nav {
+  font-size: 36px;
+}
+.menu-list {
+  list-style: none;
+}
 
-
-
- .sidebar__header {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   height: 70px;
-   border-bottom: 1px solid #000;
- }
- .sidebar__nav {
-   font-size: 36px;
- }
- .menu-list {
-   list-style: none;
- }
-
-
-
- .sidebar__footer {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   height: 95px;
-   border-top: 1px solid #000;
- }
+.sidebar__footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 95px;
+  border-top: 1px solid #000;
+}
 
 .sidebar__header,
- .sidebar__nav,
- .sidebar__footer {
-   padding: 0px 20px;
- }
+.sidebar__nav,
+.sidebar__footer {
+  padding: 0px 20px;
+}
 
- /** hide main top nav on mobile and tablet */
- .navbar-menu {
-   display: none !important;
- }
+/** hide main top nav on mobile and tablet */
+.navbar-menu {
+  display: none !important;
+}
 
+aside.v-navigation-drawer {
+  width: 100% !important;
+}
 
+@media (min-width: 320px) {
+  aside.v-navigation-drawer {
+    width: 320px !important;
+  }
+}
 
+@media (min-width: 768px) {
+  aside.v-navigation-drawer {
+    width: 459px !important;
+  }
+}
 
- @media (min-width: 340px) {
-   aside.v-navigation-drawer {
-     width: 320px !important;
-   }
- }
+@media (min-width: 1280px) {
+  aside.v-navigation-drawer {
+    width: 420px !important;
+  }
 
- @media (min-width: 768px) {
-   aside.v-navigation-drawer {
-     width: 459px !important;
-   }
- }
-
- @media (min-width: 1280px) {
-   aside.v-navigation-drawer {
-     width: 420px !important;
-   }
-
-   .navbar-menu {
-     display: flex !important;
-   }
- }
+  .navbar-menu {
+    display: flex !important;
+  }
+}
 </style>

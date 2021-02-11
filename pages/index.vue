@@ -108,9 +108,14 @@
 <!-- DISTORTION EFFECT -->
 <!-- https://codepen.io/robin-dela/pen/KKPYoBq -->
 
-    <RotatingLink :text="`Наши проекты`" :link="{ name: 'portfolio' }" :textOffset="5"/>
-    <!-- <RotatingLink :text="`Our team`" :link="{ name: 'about' }" :textOffset="40"/> -->
-    <!-- <RotatingLink :text="`Our projects`" :link="{ name: 'portfolio' }" :textOffset="11"/> -->
+
+
+    <RotatingLink :text="`Наша команда`" :link="{ name: 'about' }" :textOffset="7" />
+
+
+    <RotatingLink :text="`Наши проекты`" :link="{ name: 'portfolio' }" :textOffset="7"/>
+    <RotatingLink :text="`Our team`" :link="{ name: 'about' }" :textOffset="34"/>
+    <RotatingLink :text="`Our projects`" :link="{ name: 'portfolio' }" :textOffset="11"/>
 
 <r
 

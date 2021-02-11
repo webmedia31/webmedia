@@ -1,21 +1,17 @@
 <template>
   <section>
-
-<!-- TODO
-this rotating link in jobs.vue gets loading jobs.js on homepage (index.vue), 
-gets that effect on new pages, but doesn't get that effect at other existing pages 
+    <!-- TODO
+this rotating link in jobs.vue gets loading jobs.js on homepage (index.vue),
+gets that effect on new pages, but doesn't get that effect at other existing pages
 -->
 
-    <!-- <RotatingLink :text="`Наша команда`"  :link="{ name: 'about' }" :textOffset="7" /> -->
+    <RotatingLink :text="`Наша команда`"  :link="{ name: 'about' }" :textOffset="7" />
 
 
     <h1>
-      Хотите работать и развиваться в сфере digital?<span class="dark"
-        >С радостью поможем и будем развиваться вместе!</span
-      >
+      Хотите работать и развиваться в сфере digital?
+      <span class="dark">С радостью поможем и будем развиваться вместе!</span>
     </h1>
-
-
 
     <h2>Вакансии</h2>
     <ul>
@@ -76,16 +72,13 @@ gets that effect on new pages, but doesn't get that effect at other existing pag
     </ul>
 
     <div class="call_to_cation">Узнай больше о нашей команде!</div>
-
-    
-
-
-
   </section>
 </template>
 
 <script>
 export default {
+  name: "job",
+  layout: "default",
   async fetch({ store }) {
     if (store.getters["jobs/jobs"].length === 0) {
       await store.dispatch("jobs/fetchJobs");
@@ -98,3 +91,9 @@ export default {
   }
 };
 </script>
+
+<<style lang="scss" scoped>
+span.dark {
+  color: #343434;
+}
+</style>

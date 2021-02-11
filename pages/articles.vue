@@ -3,7 +3,6 @@
     <p>Фильтр</p>
 
 
-
  <div class="input-field col s12">
     <select>
       <option value="" disabled selected>Choose your option</option>
@@ -25,7 +24,9 @@
 </template>
 
 <script>
+
 export default {
+
   name: "portfolio",
   layout: 'default',
 }

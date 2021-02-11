@@ -1,9 +1,11 @@
 <template>
   <section class="lang-switcher d-flex align-center"
            :class="theme">
-    <span class="lang-btn">RU</span>
-    <span class="lanf-divider">&nbsp;/&nbsp;</span>
-    <span class="lang-btn">EN</span>
+    <span class="lang-btn" @click="switchLang('ru-RU')">RU</span>
+    <span class="lang-divider">/</span>
+    <span class="lang-btn" @click="switchLang('en-EN')">EN</span>
+
+    <span style="color:$FFF">{{lang}}</span>
   </section>
 </template>
 
@@ -18,6 +20,8 @@
 </style>
 
 <script>
+import {mapGetters} from 'vuex'
+
 export default {
   props: {
     theme: {
@@ -25,11 +29,25 @@ export default {
       default: 'dark' // 'light' || 'dark'
     }
   },
+  methods: {
+    async switchLang(lang) {
+
+      await this.$store.dispatch('switchLang', lang)
+    }
+  },
+  computed: {
+    ...mapGetters(['lang'])
+  },
+  mounted() {
+    //
+  }
 }
 </script>
 
 <style scoped lang="scss">
-
+.lang-btn {
+  padding: 5px;
+}
 
 
 .lang-switcher.dark * {
@@ -37,5 +55,8 @@ export default {
 }
 .lang-switcher.light * {
   color: #FFFCF9 !important;
+}
+.lang-divider {
+  cursor: default;
 }
 </style>

@@ -44,10 +44,22 @@ a.nuxt-link-active {
 
 h1 {
   font-family: GilroyBold;
-  font-size: 60px;
+  font-size: 28px;
   line-height: 120%;
   letter-spacing: 0.05em;
   color: #FFFCF9;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 45px;
+  }
+}
+
+@media (min-width: 1280px) {
+  h1 {
+    font-size: 60px;
+  }
 }
 
 h2 {
@@ -106,27 +118,3 @@ h3 {
   font-size: 30px;
   font-family: sans-serif;
 }
-
-
-/* SIDEBAR STYLES */
-
-
-/*
-.b-sidebar .sidebar-content {
-  justify-content: space-between;
-}
-
-
-/*
-.politics_link {
-  letter-spacing: 0.07em;
-  font-size: 12px;
-  color: #9f9f9f;
-  padding: 7px 0px;
-} */
-
-.input-field .helper-text.invalid {
-  color: #F44336;
-}
-
-*/ .politics_link {}

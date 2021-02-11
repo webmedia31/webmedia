@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Контакты</h1>
+    <h1>{{ title }}</h1>
 
     <div class="columns">
       <div class="column">
@@ -10,37 +10,45 @@
         <div class="contacts-info__item">
 
 
-          <p class="info-label" >{{ "callToUsLabel" | localize }}</p>
+          <p class="info-label" >{{ "callToUsLabel" | localize(lang) }}</p>
 
 
           <p class="info-value">8-800-250-19-09</p>
         </div>
         <div class="contacts-info__item">
-          <p class="info-label">{{ "writeToUsLabel" | localize }}</p>
+          <p class="info-label">{{ "writeToUsLabel" | localize(lang) }}</p>
           <p class="info-value">Info@webmedia31.ru</p>
         </div>
         <div class="contacts-info__item">
-          <p class="info-label">{{ "comeToUsLabel" | localize }}</p>
-          <p class="info-value">{{ "address" | localize }}</p>
+          <p class="info-label">{{ "comeToUsLabel" | localize(lang) }}</p>
+          <p class="info-value">{{ "address" | localize(lang) }}</p>
         </div>
       </div>
     </div>
 
   </div>
-  
+
 </template>
 
 <script>
+import localizedFilter from '@/filters/localize.filter'
+import {mapGetters} from 'vuex'
 
 export default {
   name: 'contacts',
   layout: 'default',
+  data: () => ({
+    title: localizedFilter('pageConatctsTitle', 'ru-RU')
+  }),
   head() {
     return {
-      title: "Контакты",
-      meta: [{hid: 'description', name: 'description', content: "Описание страницы Контакты"}]
+      title: this.title,
+      meta: [{hid: 'description', name: 'description', content: localizedFilter('pageConatctsDescription', 'ru-RU')}]
     };
-  }
+  },
+  computed: {
+    ...mapGetters(['lang'])
+  },
 };
 </script>
 
