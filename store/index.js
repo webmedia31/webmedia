@@ -2,75 +2,40 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import localizeFilter from '@/filters/localize.filter'
-Vue.filter('localize', localizeFilter)
+Vue.filter('t', localizeFilter)
 
 Vue.use(Vuex)
 
 
-
-
-// const state = () => ({
-//   error: null,
-//   lang: ""
-// })
-
-
-// export const mutations = {
-//   SET_ERROR(state, error) {
-//     state.error = error
-//   },
-//   CLEAR_ERROR(state) {
-//     state.error = null
-//   },
-//   SET_LANG(state, lang) {
-//     state.lang = lang
-//   },
-// }
-
-
-const store = () => new Vuex.Store({
-  state: {
-    lang: ''
-  },
-  actions: {
-    switchLang({ commit }, lang) {
-      commit('SET_LANG', lang)
-    }
-  },
-  mutations: {
-    SET_LANG(state, lang) {
-      state.lang = lang
-    },
-  },
-  getters: {
-    lang: (state) => {
-      return state.lang || "ru-RU"
-    }
-  },
+export const state = () => ({
+  error: null,
+  lang: ""
 })
 
+export const mutations = {
+  SET_LANG(state, lang) {
+    state.lang = lang
+  },
+  SET_ERROR(state, error) {
+    state.error = error
+  },
+  CLEAR_ERROR(state) {
+    state.error = null
+  }
+}
 
-export default store
+export const actions = {
+  switchLang({ commit }, lang) {
+    commit('SET_LANG', lang)
+  }
+}
 
-
-
-
-
-// export const actions = {
-//   switchLang({ commit }, lang) {
-//     commit('SET_LANG', lang)
-//   }
-// }
-
-// export const getters = {
-//   // error: s => s.error,
-//   error: (state) => {
-//     return state.error
-//   },
-//   lang: (state) => {
-//     return state.lang || "ru-RU"
-//   }
-// }
+export const getters = {
+  lang: (state) => {
+    return state.lang || "ru-RU"
+  },
+  error: s => s.error
+}
 
 
 

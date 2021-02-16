@@ -1,9 +1,15 @@
 <template>
-  <div>
+  <v-row class="mb-6" no-gutters>
     <h1>Регистрация</h1>
 
-    <RegisterForm />
-  </div>
+    <v-col md="4" offset-md="4">
+      <v-card class="pa-2" outlined tile>
+
+
+        <RegisterForm />
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script>

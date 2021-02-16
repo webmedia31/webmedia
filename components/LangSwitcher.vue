@@ -1,11 +1,9 @@
 <template>
   <section class="lang-switcher d-flex align-center"
            :class="theme">
-    <span class="lang-btn" @click="switchLang('ru-RU')">RU</span>
+    <span class="lang-btn" @click="switchLang('ru-RU')" :class="{activeLang: lang === 'ru-RU'}">RU</span>
     <span class="lang-divider">/</span>
-    <span class="lang-btn" @click="switchLang('en-EN')">EN</span>
-
-    <span style="color:$FFF">{{lang}}</span>
+    <span class="lang-btn" @click="switchLang('en-EN')" :class="{activeLang: lang === 'en-EN'}">EN</span>
   </section>
 </template>
 
@@ -47,6 +45,9 @@ export default {
 <style scoped lang="scss">
 .lang-btn {
   padding: 5px;
+}
+.activeLang {
+  text-decoration: underline;
 }
 
 

@@ -1,7 +1,7 @@
 <template>
-  <div class="showreel_block" @click="showreel">
+  <div class="showreel-block" @click="showreel">
     Showreel
-    <img class="showreel_icon" src="/showreel_icon.svg" alt="Showreel">
+    <img class="showreel-icon" src="/showreel_icon.svg" alt="Showreel">
   </div>
 </template>
 
@@ -16,12 +16,13 @@ export default {
 </script>
 
 <style scoped>
-.showreel_block {
+.showreel-block {
   display: flex;
   align-items: center;
   cursor: default;
+  cursor: pointer;
 }
-.showreel_icon {
+.showreel-icon {
   margin: 0 20px;
 }
 </style>

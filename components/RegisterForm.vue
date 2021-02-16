@@ -1,109 +1,161 @@
 <template>
-  <form class="auth-card" @submit.prevent="submitRegisterForm">
-    <div class="card-content">
+  <form>
+    <!-- EMAIL -->
+    <v-text-field
+      v-model="email"
+      :error-messages="emailErrors"
+      label="E-mail"
+      required
+      @input="$v.email.$touch()"
+      @blur="$v.email.$touch()"
+    ></v-text-field>
 
+    <!-- PASSWORD -->
+    <v-text-field
+      v-model="password"
+      :error-messages="passwordErrors"
+      :type="showPass ? 'text' : 'password'"
+      name="input-10-1"
+      label="Пароль"
+      hint="Минимум 8 символов"
+      :append-icon="showPass ? 'mdi-eye' : 'mdi-eye-off'"
+      @click:append="showPass = !showPass"
+      @input="$v.email.$touch()"
+      @blur="$v.email.$touch()"
+    ></v-text-field>
 
+    <!-- NAME -->
+    <v-text-field
+      v-model="name"
+      :error-messages="nameErrors"
+      :counter="10"
+      label="Имя"
+      required
+      @input="$v.name.$touch()"
+      @blur="$v.name.$touch()"
+    ></v-text-field>
 
-      <!-- <b-field
-        label="Email"
-        :type="{ 'is-danger': $v.userInfo.email.$invalid && $v.userInfo.email.$dirty }"
-        :message="{
-          'Введиет Email': $v.userInfo.email.$dirty && !$v.userInfo.email.required,
-          'Введите корректный Email': $v.userInfo.email.$dirty && !$v.userInfo.email.email
-        }">
-        <b-input v-model.trim="userInfo.email"></b-input>
-      </b-field>
+    <!-- AGREEMENT -->
+    <v-checkbox
+      v-model="agreement"
+      :error-messages="agreementErrors"
+      required
+      @change="$v.agreement.$touch()"
+      @blur="$v.agreement.$touch()"
+    >
+      <template v-slot:label>
+        <div class="agreement-label">
+          Я принимаю условия
+          <NuxtLink to="/politics" class="politics-link">
+            пользовательского соглашения
+          </NuxtLink>
+        </div>
+      </template>
+    </v-checkbox>
 
-      <b-field
-        label="Пароль"
-        :type="{ 'is-danger': $v.userInfo.password.$dirty && $v.userInfo.password.$invalid }"
-        :message="{
-          'Введиет пароль': $v.userInfo.password.$dirty && !$v.userInfo.password.required,
-          'Пароль не должен быть короче 6  символов': $v.userInfo.password.$dirty && !$v.userInfo.password.minLength,
-        }">
-        <b-input v-model.trim="userInfo.password"></b-input>
-      </b-field>
-
-      <b-field
-        label="Имя"
-        :type="{ 'is-danger': $v.userInfo.name.$dirty && $v.userInfo.name.$invalid }"
-        :message="{'Введиет имя': $v.userInfo.name.$dirty && !$v.userInfo.name.required}">
-        <b-input v-model.trim="userInfo.name"></b-input>
-      </b-field>
-
-      <p>
-        <label>
-          <input v-model="userInfo.agreement" type="checkbox" />
-          <span>С условиями <NuxtLink no-prefetch class="politics_link" :to="{ path: '/politics' }">политики конфиденциальности</NuxtLink> согласен</span>
-        </label>
-      </p>
-
-      <b-button
-          class="btn"
-          :disabled="!this.userInfo.agreement || $v.$anyError"
-          type="is-info"
-          native-type="submit"
-        >
-          Зарегистрироваться
-        </b-button> -->
-    </div>
+    <v-btn class="mr-4" @click="submitRegisterForm">
+      Зарегистрироваться
+    </v-btn>
   </form>
 </template>
 
 <script>
-import { email, required, minLength } from "vuelidate/lib/validators";
+import { validationMixin } from "vuelidate";
+import {
+  required,
+  minLength,
+  maxLength,
+  email
+} from "vuelidate/lib/validators";
 
 export default {
-  data: () => ({
-    userInfo: {
-      email: "",
-      password: "",
-      name: "",
-      agreement: true
-    },
-  }),
+  mixins: [validationMixin],
+
   validations: {
-    userInfo: {
-      email: { required, email },
-      password: { required, minLength: minLength(6) },
-      name: { required },
-      agreement: { checked: v => v }
-    },
+    name: { required, maxLength: maxLength(10) },
+    email: { required, email },
+    password: { required, minLength: minLength(4) },
+    agreement: { checked: v => v }
   },
+
+  data: () => ({
+    name: "evgen",
+    email: "delirium15@yandex.ru",
+    password: "1234",
+    showPass: false,
+    agreement: true
+  }),
+
+  computed: {
+    emailErrors() {
+      const errors = [];
+      if (!this.$v.email.$dirty) return errors;
+      !this.$v.email.email && errors.push("Введите корректный e-mail");
+      !this.$v.email.required && errors.push("Введите E-mail");
+      return errors;
+    },
+    passwordErrors() {
+      const errors = [];
+      if (!this.$v.password.$dirty) return errors;
+      !this.$v.password.minLength &&
+        errors.push("Пароль должен быть не менее 4 символов");
+      !this.$v.password.required && errors.push("Введите пароль");
+      return errors;
+    },
+    nameErrors() {
+      const errors = [];
+      if (!this.$v.name.$dirty) return errors;
+      !this.$v.name.maxLength &&
+        errors.push("Имя не должно превышать 10 символов");
+      !this.$v.name.required && errors.push("Введите имя");
+      return errors;
+    },
+    agreementErrors() {
+      const errors = [];
+      if (!this.$v.agreement.$dirty) return errors;
+      !this.$v.agreement.checked &&
+        errors.push("Примите условия, чтобы продолжить");
+      return errors;
+    }
+  },
+
   methods: {
     async submitRegisterForm() {
-
-        console.log('!!!!!!!!!!!!!!');
-
+      if (this.$v.$invalid) {
         this.$v.$touch();
-
-        // console.log("email dirty: " + this.$v.email.$dirty);
-        // console.log("email invalid: " + this.$v.email.$invalid);
-        // console.log("error: " + this.$v.email.$error);
-
-        console.log(this.$v);
-
         return;
+      }
+
+      const formData = {
+        email: this.email,
+        password: this.password,
+        name: this.name
+      }
+
+      try {
+        await this.$store.dispatch('auth/registerUser', formData)
+        // this.$router.push("/");
+      } catch (e) {}
+    },
 
 
-
-      // console.log("!!!!!!!!!!");
-      // if (this.$v.$invalid) {
-      //   this.$v.$touch();
-      //   return;
-      // }
-
-    //   const formData = {
-    //     email: this.email,
-    //     password: this.password,
-    //     name: this.name
-    //   };
-
-    //   try {
-    //     await this.$store.dispatch("register", formData);
-    //     this.$router.push("/");
-    //   } catch (e) {}
+    clear() {
+      this.$v.$reset();
+      this.email = "";
+      this.password = "";
+      this.name = "";
+      this.agreement = false;
     }
   }
 };
 </script>
+
+<style scoped>
+.agreement-label {
+  font-size: 14px;
+  line-height: 15px;
+}
+.politics-link:hover {
+  text-decoration: underline;
+}
+</style>

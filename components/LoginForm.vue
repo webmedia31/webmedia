@@ -8,7 +8,7 @@
               v-model="firstname"
               :rules="nameRules"
               :counter="10"
-              label="First name"
+              label="Имя"
               required
             ></v-text-field>
           </v-col>
@@ -44,13 +44,13 @@
       firstname: '',
       lastname: '',
       nameRules: [
-        v => !!v || 'Name is required',
-        v => v.length <= 10 || 'Name must be less than 10 characters',
+        v => !!v || 'Введите имя',
+        v => v.length <= 10 || 'Имя не должно быть длиннее 10 символов',
       ],
       email: '',
       emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+/.test(v) || 'E-mail must be valid',
+        v => !!v || 'Введите E-mail',
+        v => /.+@.+/.test(v) || 'Введите корректный E-mail',
       ],
     }),
   }

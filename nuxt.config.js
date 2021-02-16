@@ -20,7 +20,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '@/plugins/splide-carousel-vue', mode: 'client' },
-    { src: '~/plugins/vuelidate.plugin' },
+    { src: '@/plugins/vuelidate.plugin' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

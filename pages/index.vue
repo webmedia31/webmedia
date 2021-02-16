@@ -117,8 +117,6 @@
     <RotatingLink :text="`Our team`" :link="{ name: 'about' }" :textOffset="34"/>
     <RotatingLink :text="`Our projects`" :link="{ name: 'portfolio' }" :textOffset="11"/>
 
-<r
-
     <!-- <RotatingLinkSvg /> -->
 
 
