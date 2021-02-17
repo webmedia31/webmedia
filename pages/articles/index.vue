@@ -1,33 +1,52 @@
 <template>
-  <section class="section">
-    <p>Фильтр</p>
+  <section class="articles">
 
+    <div class="articles-filter">
+      <p>Фильтр</p>
+      <v-select
+        :items="items"
+        v-model="select"
+        dense
+        item-text="val"
+        item-value="key"
+      ></v-select>
+    </div>
 
- <div class="input-field col s12">
-    <select>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
-    <label>Materialize Select</label>
-  </div>
+    <div class="articles-list">
+      <!-- <NuxtLink :to="`/articles/` + `some-article-alias`"> -->
+        <div class="article-preview">
+          <div class="article-metadata">
+            <div class="articles-categories">
 
-
-    <select>
-      <option value="all">Все записи</option>
-      <option value="news">Новости</option>
-      <option value="articles">Статьи</option>
-    </select>
+            </div>
+            <div class="article-date"></div>
+          </div>
+          <div class="article-thumbnail">
+            <img src="" alt="">
+          </div>
+          <div class="article-details">
+            <h2 class="article-title">Some article title</h2>
+            <p class="article-announce">Some announcing part of article content</p>
+            <LinkArrow forward :text="`Читать`" :link="{ path: '/articles/' + 'some-article-alias'  }"/>
+          </div>
+        </div>
+      <!-- </NuxtLink> -->
+    </div>
 
   </section>
 </template>
 
 <script>
-
 export default {
-
   name: "portfolio",
-  layout: 'default',
-}
+  layout: "default",
+  data: () => ({
+    select: { key: "all", val: "Все записи" },
+    items: [
+      { key: "all", val: "Все записи" },
+      { key: "news", val: "Новости" },
+      { key: "articles", val: "Статьи" }
+    ]
+  })
+};
 </script>

@@ -5,8 +5,8 @@
     <v-col md="4" offset-md="4">
       <v-card class="pa-2" outlined tile>
 
-
         <RegisterForm />
+
       </v-card>
     </v-col>
   </v-row>
