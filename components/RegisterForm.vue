@@ -17,7 +17,7 @@
       :type="showPass ? 'text' : 'password'"
       name="input-10-1"
       label="Пароль"
-      hint="Минимум 8 символов"
+      hint="Минимум 6 символов"
       :append-icon="showPass ? 'mdi-eye' : 'mdi-eye-off'"
       @click:append="showPass = !showPass"
       @input="$v.email.$touch()"
@@ -74,14 +74,14 @@ export default {
   validations: {
     name: { required, maxLength: maxLength(10) },
     email: { required, email },
-    password: { required, minLength: minLength(4) },
+    password: { required, minLength: minLength(6) },
     agreement: { checked: v => v }
   },
 
   data: () => ({
     name: "evgen",
     email: "delirium15@yandex.ru",
-    password: "1234",
+    password: "123456",
     showPass: false,
     agreement: true
   }),
@@ -98,7 +98,7 @@ export default {
       const errors = [];
       if (!this.$v.password.$dirty) return errors;
       !this.$v.password.minLength &&
-        errors.push("Пароль должен быть не менее 4 символов");
+        errors.push("Пароль должен быть не менее 6 символов");
       !this.$v.password.required && errors.push("Введите пароль");
       return errors;
     },

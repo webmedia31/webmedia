@@ -1,19 +1,17 @@
-import Vue from 'vue'
-
 export default {
   install(Vue) {
+
     Vue.prototype.$notice = function(html) {
-      console.log(html);
-      snackbar = true
-        // window.M.toast({ html })
+      this.snackbar.text = html
+      this.snackbar.timeout = 3000
+      this.snackbar.visible = true
     }
 
     Vue.prototype.$noticeError = function(html) {
-      console.log(html);
-      console.log(snackbar);
-      console.log(Vue);
-      snackbar = true
-        // window.M.toast({ html: `[Ошибка]: ${html}` })
+      this.snackbar.text = '[ОШИБКА] ' + html
+      this.snackbar.timeout = 5000
+      this.snackbar.visible = true
     }
+
   }
 }

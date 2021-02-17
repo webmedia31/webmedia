@@ -2,10 +2,11 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import localizeFilter from '@/filters/localize.filter'
+import noticePlugin from '@/utils/notice.plugin'
+
 Vue.filter('t', localizeFilter)
-
+Vue.use(noticePlugin)
 Vue.use(Vuex)
-
 
 export const state = () => ({
   error: null,

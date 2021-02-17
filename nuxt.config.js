@@ -14,13 +14,14 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/styles/style_global.css',
+    '~/assets/styles/style_global.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '@/plugins/splide-carousel-vue', mode: 'client' },
     { src: '@/plugins/vuelidate.plugin' },
+    { src: '@/utils/notice.plugin' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -53,14 +54,14 @@ export default {
         },
         services: {
           auth: true,
-          // firestore: true,
-          // functions: true,
-          // storage: true,
+          firestore: true,
+          functions: true,
+          storage: true,
           database: true,
-          // messaging: true,
-          // performance: true,
-          // analytics: true,
-          // remoteConfig: true
+          messaging: true,
+          performance: true,
+          analytics: true,
+          remoteConfig: true
         }
       }
     ]

@@ -14,7 +14,6 @@ export const actions = {
         name
       })
     } catch (e) {
-      console.log(e);
       commit('SET_ERROR', e, { root: true })
       throw e
     }
