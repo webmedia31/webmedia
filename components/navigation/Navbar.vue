@@ -6,7 +6,7 @@
 
       <LangSwitcher :theme="`light`" />
 
-      <AuthLinks />
+      <LinksAuth />
 
       <ul class="navbar-menu d-flex">
         <li v-for="(item, index) in navBarItems" :key="index">
@@ -43,7 +43,7 @@
       </div>
 
       <div class="sidebar__footer">
-        <SocialLinks />
+        <LinksSocial />
 
         <NuxtLink no-prefetch class="politics_link" :to="{ name: 'politics' }"
           >Политика конфиденциальности

@@ -9,6 +9,9 @@ export default {
     ],
     link: [
       // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { hid: 'stripe', src: 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js', defer: true }
     ]
   },
 
@@ -54,14 +57,14 @@ export default {
         },
         services: {
           auth: true,
-          firestore: true,
-          functions: true,
-          storage: true,
+          // firestore: true,
+          // functions: true,
+          // storage: true,
           database: true,
           messaging: true,
           performance: true,
           analytics: true,
-          remoteConfig: true
+          // remoteConfig: true
         }
       }
     ]

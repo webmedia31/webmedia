@@ -1,7 +1,7 @@
 <template>
   <section class="single-article">
 
-    <LinkArrow back :text="`Вернуться`" :link="{ name: '/articles' }"/>
+    <LinkArrowed back :text="`Вернуться`" :link="{ path: '/articles' }"/>
 
     <h1>Title of the article</h1>
     <div class="article-details">

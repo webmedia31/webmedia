@@ -5,21 +5,16 @@ this rotating link in jobs.vue gets loading jobs.js on homepage (index.vue),
 gets that effect on new pages, but doesn't get that effect at other existing pages
 -->
 
-    <RotatingLink :text="`Наша команда`"  :link="{ name: 'about' }" :textOffset="7" />
-
+    <LinkRotating :text="`Наша команда`"  :link="{ name: 'about' }" :textOffset="7" />
 
     <h1>
       Хотите работать и развиваться в сфере digital?
       <span class="dark">С радостью поможем и будем развиваться вместе!</span>
     </h1>
 
-    <h2>Вакансии</h2>
-    <ul>
-      <li v-for="(job, key) in jobs" :key="key">
-        <div class="vacancy_title">{{ job["ru-RU"].title }}</div>
-        <!-- <div class="vacancy_description" v-html="job['ru-RU'].content"></div> -->
-      </li>
-    </ul>
+
+    <JobList />
+
 
     <h2>Мотивирован много работать и нацелен на результат?</h2>
     <p>
@@ -77,18 +72,13 @@ gets that effect on new pages, but doesn't get that effect at other existing pag
 
 <script>
 export default {
-  name: "job",
+  name: "jobs-page",
   layout: "default",
   async fetch({ store }) {
     if (store.getters["jobs/jobs"].length === 0) {
       await store.dispatch("jobs/fetchJobs");
     }
   },
-  computed: {
-    jobs() {
-      return this.$store.getters["jobs/jobs"];
-    }
-  }
 };
 </script>
 

@@ -27,7 +27,9 @@
           <div class="article-details">
             <h2 class="article-title">Some article title</h2>
             <p class="article-announce">Some announcing part of article content</p>
-            <LinkArrow forward :text="`Читать`" :link="{ path: '/articles/' + 'some-article-alias'  }"/>
+
+            <LinkArrowed :text="`Читать`" :link="{ path: '/articles/' + 'some-article-alias'  }"/>
+
           </div>
         </div>
       <!-- </NuxtLink> -->

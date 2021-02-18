@@ -110,12 +110,12 @@
 
 
 
-    <RotatingLink :text="`Наша команда`" :link="{ name: 'about' }" :textOffset="7" />
+    <LinkRotating :text="`Наша команда`" :link="{ name: 'about' }" :textOffset="7" />
 
 
-    <RotatingLink :text="`Наши проекты`" :link="{ name: 'portfolio' }" :textOffset="7"/>
-    <RotatingLink :text="`Our team`" :link="{ name: 'about' }" :textOffset="34"/>
-    <RotatingLink :text="`Our projects`" :link="{ name: 'portfolio' }" :textOffset="11"/>
+    <LinkRotating :text="`Наши проекты`" :link="{ name: 'portfolio' }" :textOffset="7"/>
+    <LinkRotating :text="`Our team`" :link="{ name: 'about' }" :textOffset="34"/>
+    <LinkRotating :text="`Our projects`" :link="{ name: 'portfolio' }" :textOffset="11"/>
 
     <!-- <RotatingLinkSvg /> -->
 
@@ -130,9 +130,9 @@ export default {
   layout: "default",
   head() {
     return {
-      title: this.title + " | Webmedia",
+      title: this.title,
       meta: [
-        /*{name: 'twitter:title', contetnt: this.post.title}*/
+        /*{name: 'description', contetnt: this.post.title}*/
       ]
     };
   },

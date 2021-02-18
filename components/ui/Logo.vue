@@ -1,7 +1,7 @@
 <template>
-  <router-link :to="{ path: '/' }">
+  <NuxtLink :to="{ path: '/' }">
     <img src="~assets/webmedia_logo.svg" alt="Webmedia" height="28" />
-  </router-link>
+  </NuxtLink>
 </template>
 
 <style>

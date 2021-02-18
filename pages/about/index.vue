@@ -1,13 +1,13 @@
 <template>
   <div>
-  
+
     <section class="intro">
       <p>Решаем любые задачи</p>
       <h1>{{ pageHeaderH1 }}</h1>
       <p>Нам нравится видеть результат нашей работы</p>
       <div class="viewport-footer">
-        <SocialLinks :theme="`light`" />
-        <Showreel />
+        <LinksSocial :theme="`light`" />
+        <LinkShowreel />
       </div>
     </section>
 

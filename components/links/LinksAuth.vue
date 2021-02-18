@@ -7,6 +7,8 @@
       <NuxtLink :to="{ name: 'login' }">Войти</NuxtLink>
       <NuxtLink :to="{ name: 'register' }">Зарегистрироваться</NuxtLink>
     </div>
+
+    <NuxtLink :to="{ path: 'admin' }">Админка</NuxtLink>
   </div>
 </template>
 
