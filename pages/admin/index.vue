@@ -1,8 +1,7 @@
 <template>
   <section class="admin-page">
 
-    <NuxtLink to="/admin/vacancy">Вакансии</NuxtLink>
-    <NuxtLink to="/admin/article">Статьи</NuxtLink>
+
 
   </section>
 </template>

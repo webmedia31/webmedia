@@ -1,9 +1,15 @@
 <template>
   <section class="vacancies-page">
     <div class="new-vacancy">
-      <v-btn depressed>
+      <v-btn>
         Добавить вакансию
       </v-btn>
+
+      <v-btn class="mr-4">
+      Добавить вакансию
+    </v-btn>
+
+
     </div>
     <div class="existing-vacancies">
       <JobList />

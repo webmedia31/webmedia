@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h1>Редактирование вакансии</h1>
+    <h1>Редактирование статьи</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "vacancy-edit",
+  name: "article-edit",
   layout: "admin",
 }
 </script>

@@ -21,16 +21,8 @@ export default {
   head() {
     return {
       titleTemplate: "%s | Webmedia",
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: "Описание страницы в шаблоне"
-        }
-      ]
+      meta: [{hid: "description", name: "description", content: "Описание страницы в шаблоне"}]
     };
   },
-
-
 };
 </script>
