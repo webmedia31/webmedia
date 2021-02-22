@@ -1,5 +1,7 @@
 <template>
+
   <div>
+
     <h1>Добавление статьи</h1>
   </div>
 </template>

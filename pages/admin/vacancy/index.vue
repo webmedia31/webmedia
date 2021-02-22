@@ -1,16 +1,17 @@
 <template>
   <section class="vacancies-page">
-    <div class="new-vacancy">
-      <v-btn>
-        Добавить вакансию
-      </v-btn>
+    <header>
+      <div class="title">Вакансии</div>
+      <div class="user"></div>
+      <div class="interval">
+        <NuxtLink to="/admin/vacancy/create">
+          <v-btn class="add-button">
+            <v-icon left dark>mdi-plus-circle</v-icon>Добавить вакансию
+          </v-btn>
+        </NuxtLink>
+      </div>
+    </header>
 
-      <v-btn class="mr-4">
-      Добавить вакансию
-    </v-btn>
-
-
-    </div>
     <div class="existing-vacancies">
       <JobList />
     </div>
@@ -28,3 +29,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.add-button i {
+  margin-right: 5px;
+}
+</style>

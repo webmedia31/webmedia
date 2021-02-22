@@ -1,16 +1,24 @@
 <template>
-  <div>
-    <h1>Редактирование вакансии</h1>
-  </div>
+  <section class="vacancy-create-form">
+    <header>
+      <div class="title">Редактирование вакансии</div>
+      <div class="user"></div>
+      <div class="interval">
+
+      </div>
+    </header>
+
+    <div class="form">
+      <VacancyForm />
+    </div>
+  </section>
 </template>
 
 <script>
+
+
 export default {
   name: "vacancy-edit",
   layout: "admin",
-}
+};
 </script>
-
-<style scoped>
-
-</style>

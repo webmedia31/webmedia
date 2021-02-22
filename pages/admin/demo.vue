@@ -1,39 +1,41 @@
 <template>
-  <div>
+  <div class="workspace">
+
     <header>
       <div class="title">Dashboard</div>
       <div class="user"></div>
       <div class="interval">
         <ul>
-          <li>Weekly</li>
-          <li class="active">Monthly</li>
+          <li>Неделя</li>
+          <li class="active">Месяц</li>
         </ul>
       </div>
     </header>
+
     <section>
       <div class="chart">
         <canvas id="c1" width="900" height="200"></canvas>
       </div>
     </section>
     <section>
-      <header>Total Sales</header>
+      <header>Всего конверсий</header>
       <div class="inlineChart">
         <canvas id="c2" width="100" height="100"></canvas>
-        <div class="info">
+        <div class="chart-info">
           <div class="value">$36,146</div>
           <div class="title">Credit sales</div>
         </div>
       </div>
       <div class="inlineChart">
         <canvas id="c3" width="100" height="100"></canvas>
-        <div class="info">
+        <div class="chart-info">
           <div class="value">$24,734</div>
           <div class="title">Channel Sales</div>
         </div>
       </div>
       <div class="inlineChart">
         <canvas id="c4" width="100" height="100"></canvas>
-        <div class="info">
+        <div class="chart-info">
           <div class="value">$15,650</div>
           <div class="title">Direct Sales</div>
         </div>
@@ -151,8 +153,8 @@ export default {
     ];
 
     var options2 = {
-      animationEasing : "easeInOutQuad",
-      animationSteps : 70,
+      animationEasing : "easeOutExpo",
+      animationSteps : 120,
       responsive: true,
       segmentShowStroke: false,
       percentageInnerCutout: 90
@@ -178,7 +180,7 @@ export default {
     ];
 
     var options2 = {
-      animationEasing : "easeInOutQuad",
+      animationEasing : "easeOutExpo",
       animationSteps : 70,
       responsive: true,
       segmentShowStroke: false,
@@ -201,7 +203,7 @@ export default {
     ];
 
     var options2 = {
-      animationEasing : "easeInOutQuad",
+      animationEasing : "easeOutExpo",
       animationSteps : 70,
       responsive: true,
       segmentShowStroke: false,
@@ -216,47 +218,8 @@ export default {
 
 <style scoped>
 
-header {
-  height: 60px;
-  border-bottom: 1px solid #2a3843;
-}
-header .title {
-  float: left;
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-header .user {
-  float: right;
-  width: 48px;
-  height: 48px;
-  background-image: url("https://s3.amazonaws.com/uifaces/faces/twitter/peterlandt/48.jpg");
-  -moz-border-radius: 48px;
-  -webkit-border-radius: 48px;
-  border-radius: 48px;
-  margin-left: 20px;
-}
-header .interval {
-  float: right;
-}
-header .interval ul {
-  padding: 0;
-  list-style: none;
-}
-header .interval ul li {
-  float: right;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 2px 10px;
-  margin: 0px 10px;
-}
-header .interval ul li.active {
-  background-color: #d3d3d3;
-  color: #202b33;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
+
+
 
 
 section {
@@ -279,12 +242,12 @@ section .inlineChart {
 section .inlineChart canvas {
   float: left;
 }
-section .inlineChart .info {
+section .inlineChart .chart-info {
   float: left;
   padding-left: 20px;
   padding-top: 16px;
 }
-section .inlineChart .info .value {
+section .inlineChart .chart-info .value {
   font-size: 2rem;
   color: #d3d3d3;
 }

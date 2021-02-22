@@ -1,62 +1,17 @@
 <template>
 
-<!-- <v-app> -->
+<v-app>
 
-  <div>
-    <nav>
-      <header><NuxtLink to="/admin" exact>Webmedia</NuxtLink></header>
-      <section>
-        <header>Вакансии</header>
-        <ul>
-          <li class="active">
-            <NuxtLink to="/admin/vacancy">Все вакансии</NuxtLink>
-          <li class="new">
-          <i class="fa fa-plus-circle"> </i>
-            <NuxtLink to="/admin/vacancy/create">Добавить вакансию</NuxtLink>
-          </li>
-        </ul>
-      </section>
-      <section>
-        <header>Статьи</header>
-        <ul>
-          <li data-value="4">
-            <NuxtLink to="/admin/article">Все статьи</NuxtLink>
-          </li>
-          <li class="new">
-            <i class="fa fa-plus-circle"> </i>
-            <NuxtLink to="/admin/article/create">Добавить статью</NuxtLink>
-          </li>
-        </ul>
-      </section>
-      <section>
-        <header>Categories</header>
-        <ul>
-          <li class="red">Credit Sales</li>
-          <li class="yellow">Channel Sales</li>
-          <li class="green">Direct Sales</li>
-          <li class="new">
-            <i class="fa fa-plus-circle"> </i>
-            Add Category
-          </li>
-        </ul>
-      </section>
-      <section>
-        <header>Разное</header>
-        <ul>
-          <li class="red">
-            <NuxtLink to="/admin/demo">Demo</NuxtLink>
-          </li>
-        </ul>
-      </section>
-    </nav>
+  <div class="admin-layout">
 
+    <AdminSidebar />
 
     <article>
       <nuxt />
     </article>
   </div>
 
-  <!-- </v-app> -->
+  </v-app>
 
 </template>
 
@@ -70,104 +25,11 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url("https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css");
-* {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-header {
-  color: #d3d3d3;
-}
-
-nav {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 82%;
-  left: 0;
-  padding: 22px;
-  border-right: 2px solid #161e23;
-}
-nav > header {
-  font-weight: 700;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-}
-nav section header {
-  padding-top: 30px;
-  font-weight: bold;
-  color: #b9491e;
-}
-nav section ul {
-  list-style: none;
-  padding: 0px;
-}
-nav section ul li {
-  position: relative;
-  padding: 10px 0px;
-}
-nav section ul li.active {
-  color: #2278ae;
-}
-nav section ul li:after {
-  content: attr(data-value);
-  position: absolute;
-  right: 0px;
-  width: 19px;
-  background-color: #738491;
-  font-size: 0.9rem;
-  color: #202b33;
-  -moz-border-radius: 19px;
-  -webkit-border-radius: 19px;
-  border-radius: 19px;
-  text-align: center;
-}
-nav section ul li.red:after {
-  content: "";
-  position: absolute;
-  top: 14px;
-  right: 0px;
-  width: 10px;
-  height: 10px;
-  background-color: #ec487f;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-nav section ul li.yellow:after {
-  content: "";
-  position: absolute;
-  top: 14px;
-  right: 0px;
-  width: 10px;
-  height: 10px;
-  background-color: #ea8e39;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-nav section ul li.green:after {
-  content: "";
-  position: absolute;
-  top: 14px;
-  right: 0px;
-  width: 10px;
-  height: 10px;
-  background-color: #38af5b;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-nav section ul li.new {
-  font-size: 0.9rem;
-  color: #545f68;
-}
+<style>
 
 
-article {
+
+.admin-layout article {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -175,7 +37,57 @@ article {
   left: 18%;
   overflow: auto;
   border-left: 2px solid #2a3843;
-  padding: 20px;
+  padding: 0px 22px;
+  background-color: #202B33;
 }
+.admin-layout article header {
+  margin-bottom: 30px;
+}
+.admin-layout header {
+  height: 60px;
+  border-bottom: 1px solid #2a3843;
+  color: #d3d3d3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin-layout header .title {
+  float: left;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.admin-layout header .user {
+  float: right;
+  width: 48px;
+  height: 48px;
+  background-image: url("https://s3.amazonaws.com/uifaces/faces/twitter/peterlandt/48.jpg");
+  -moz-border-radius: 48px;
+  -webkit-border-radius: 48px;
+  border-radius: 48px;
+  margin-left: 20px;
+}
+.admin-layout header .interval {
+  float: right;
+}
+.admin-layout header .interval ul {
+  padding: 0;
+  list-style: none;
+}
+.admin-layout header .interval ul li {
+  float: right;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  margin: 0px 10px;
+}
+.admin-layout header .interval ul li.active {
+  background-color: #d3d3d3;
+  color: #202b33;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
 
 </style>
