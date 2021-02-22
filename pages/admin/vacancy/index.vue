@@ -13,7 +13,7 @@
     </header>
 
     <div class="existing-vacancies">
-      <JobList />
+      <AdminJobList />
     </div>
   </section>
 </template>

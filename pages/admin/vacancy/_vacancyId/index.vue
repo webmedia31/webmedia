@@ -1,5 +1,5 @@
 <template>
-  <section class="vacancy-create-form">
+  <section class="vacancy-edit-form">
     <header>
       <div class="title">Редактирование вакансии</div>
       <div class="user"></div>

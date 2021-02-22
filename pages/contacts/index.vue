@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ pageTitle }}</h1>
+    <h1>Контакты</h1>
 
     <!-- {{ $store.state.lang }} -->
 
@@ -10,55 +10,50 @@
       </div>
       <div class="column contacts-info">
         <div class="contacts-info__item">
-
-
-          <p class="info-label" >{{ "callToUsLabel" | t(lang) }}</p>
-
+          <p class="info-label">Звоните нам</p>
 
           <p class="info-value">8-800-250-19-09</p>
         </div>
         <div class="contacts-info__item">
-          <p class="info-label">{{ "writeToUsLabel" | t(lang) }}</p>
+          <p class="info-label">Пишите нам</p>
           <p class="info-value">Info@webmedia31.ru</p>
         </div>
         <div class="contacts-info__item">
-          <p class="info-label">{{ "comeToUsLabel" | t(lang) }}</p>
-          <p class="info-value">{{ "address" | t(lang) }}</p>
+          <p class="info-label">Приходите к нам</p>
+          <p class="info-value">
+            Белгород, ул.Шаландина, 1а, 3 этаж, пн-пт: 9:00 - 18:00
+          </p>
         </div>
       </div>
     </div>
-
   </div>
-
 </template>
 
 <script>
-import t from '@/filters/localize.filter'
-import {mapGetters} from 'vuex'
+import { mapGetters } from "vuex";
 
 export default {
-  name: 'contacts',
-  layout: 'default',
+  name: "contacts",
+  layout: "default",
   data: () => ({
-
-}),
+    pageTitle: "Контакты",
+    pageDescription: "Описание страницы контакты"
+  }),
   head() {
     return {
       title: this.pageTitle,
-      meta: [{hid: 'description', name: 'description', content: this.pageDescription}]
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.pageDescription
+        }
+      ]
     };
   },
   computed: {
-    ...mapGetters(['lang']),
-    pageTitle: function() {
-
-      return t('pageConatctsTitle', this.lang)
-
-    },
-    pageDescription: function() {
-      return t('pageConatctsTitle', this.lang)
-    }
-  },
+    // ...mapGetters(["lang"]),
+  }
 };
 </script>
 

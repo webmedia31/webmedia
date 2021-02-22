@@ -4,8 +4,6 @@
     <nav class="navbar d-flex justify-space-between">
       <Logo />
 
-      <LangSwitcher :theme="`light`" />
-
       <LinksAuth />
 
       <ul class="navbar-menu d-flex">
@@ -25,7 +23,6 @@
     <!-- SIDEBAR -->
     <v-navigation-drawer v-model="drawer" absolute temporary right>
       <div class="sidebar__header d-flex align-center justify-sm-space-between">
-        <LangSwitcher />
 
         <div class="sidebar_closelink" @click="drawer = !drawer">
           Закрыть
