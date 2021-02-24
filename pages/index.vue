@@ -1,100 +1,6 @@
 <template>
-  <section class="section">
-
-
-
-
+  <section>
     <div>
-    <v-card
-      class="d-flex justify-start mb-6"
-      :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-      flat
-      tile
-    >
-      <v-card
-        v-for="n in 3"
-        :key="n"
-        class="pa-2"
-        outlined
-        tile
-      >
-        justify-start
-      </v-card>
-    </v-card>
-
-    <v-card
-      class="d-flex justify-end mb-6"
-      :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-      flat
-      tile
-    >
-      <v-card
-        v-for="n in 3"
-        :key="n"
-        class="pa-2"
-        outlined
-        tile
-      >
-        justify-end
-      </v-card>
-    </v-card>
-
-    <v-card
-      class="d-flex justify-center mb-6"
-      :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-      flat
-      tile
-    >
-      <v-card
-        v-for="n in 3"
-        :key="n"
-        class="pa-2"
-        outlined
-        tile
-      >
-        justify-center
-      </v-card>
-    </v-card>
-
-    <v-card
-      class="d-flex justify-space-between mb-6"
-      :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-      flat
-      tile
-    >
-      <v-card
-        v-for="n in 3"
-        :key="n"
-        class="pa-2"
-        outlined
-        tile
-      >
-        justify-space-between
-      </v-card>
-    </v-card>
-
-    <v-card
-      class="d-flex justify-space-around mb-6"
-      :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-      flat
-      tile
-    >
-      <v-card
-        v-for="n in 3"
-        :key="n"
-        class="pa-2"
-        outlined
-        tile
-      >
-        justify-space-around
-      </v-card>
-    </v-card>
-  </div>
-
-
-
-
-    <div class="is-mobile">
       <p>Добро пожаловать в webmedia</p>
       <h1>{{ title }}</h1>
       <p>
@@ -104,23 +10,20 @@
       </p>
     </div>
 
+    <!-- DISTORTION EFFECT -->
+    <!-- https://codepen.io/robin-dela/pen/KKPYoBq -->
 
-<!-- DISTORTION EFFECT -->
-<!-- https://codepen.io/robin-dela/pen/KKPYoBq -->
+    <LinkRotating
+      :text="`Наша команда`"
+      :link="{ name: 'about' }"
+      :textOffset="7"
+    />
 
+    <div class="static-footer d-flex justify-space-between align-center">
+      <LinksSocial theme="light" />
 
-
-    <LinkRotating :text="`Наша команда`" :link="{ name: 'about' }" :textOffset="7" />
-
-
-    <LinkRotating :text="`Наши проекты`" :link="{ name: 'portfolio' }" :textOffset="7"/>
-    <LinkRotating :text="`Our team`" :link="{ name: 'about' }" :textOffset="34"/>
-    <LinkRotating :text="`Our projects`" :link="{ name: 'portfolio' }" :textOffset="11"/>
-
-    <!-- <RotatingLinkSvg /> -->
-
-
-
+      <LinkShowreel />
+    </div>
   </section>
 </template>
 
@@ -144,4 +47,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>

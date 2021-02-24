@@ -58,6 +58,7 @@
       <p>С кем вы будете побеждать</p>
       <hr>
 
+    <LinkRotating :text="`Наши проекты`" :link="{ name: 'portfolio' }" :textOffset="7"/>
 
 
       <Teammate  v-for="person of 5" :num="person" :key="person"/>

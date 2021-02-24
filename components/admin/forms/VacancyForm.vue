@@ -10,14 +10,24 @@
       @blur="$v.vacancy.title.$touch()"
     ></v-text-field>
 
+    <!-- VACANCY ALIAS -->
+    <v-text-field
+      v-model="alias"
+      :error-messages="vacancyAliasErrors"
+      label="Алиас URL"
+      required
+      disabled
+      @input="$v.alias.$touch()"
+      @blur="$v.alias.$touch()"
+    ></v-text-field>
+
     <!-- VACANCY CONTENT -->
     <v-textarea
       name="input-7-1"
       label="Текст вакансии"
       v-model="vacancy.content"
       :error-messages="vacancyContentErrors"
-      @input="$v.vacancy.content.$touch()"
-      @blur="$v.vacancy.content.$touch()"
+
     ></v-textarea>
 
     <!-- PUBLISHED -->
@@ -38,7 +48,7 @@
 <script>
 // import { validationMixin } from "vuelidate";
 import { required } from "vuelidate/lib/validators";
-import t from '@/filters/translit.filter'
+import translit from '@/filters/translit.filter'
 
 export default {
   // mixins: [validationMixin],
@@ -48,6 +58,7 @@ export default {
       required: false,
       default: () => ({
         title: "",
+        alias: translit(this.title),
         content: "",
         published: false
       })
@@ -57,51 +68,54 @@ export default {
   validations: {
     vacancy: {
       title: { required },
-      content: { required }
-    }
+      content: { required },
+
+    },
+    alias: { required }
   },
 
-  // data() {
-  //   return {
-  //     vacancy: this.vacancy
-  //       ? { ...this.vacancy }
-  //       : {
-  //           title: "",
-  //           content: "",
-  //           published: false
-  //         }
-  //   }
-  // },
-
   computed: {
-    // vacancy(){
-    //   return vacancy: this.vacancy
-    //     ? { ...this.vacancy }
-    //     : {
-    //         title: "",
-    //         content: "",
-    //         published: false
-    //       }
-    // },
 
     vacancyTitleErrors() {
       const errors = [];
       if (!this.$v.vacancy.title.$dirty) return errors;
-      !this.$v.vacancy.title.required &&
-        errors.push("Введите название вакансии");
+      !this.$v.vacancy.title.required && errors.push("Введите название вакансии");
       return errors;
     },
     vacancyContentErrors() {
       const errors = [];
       if (!this.$v.vacancy.content.$dirty) return errors;
-      !this.$v.vacancy.content.required &&
-        errors.push("Введите текст вакансии");
+      !this.$v.vacancy.content.required && errors.push("Введите текст вакансии");
       return errors;
+    },
+    vacancyAliasErrors() {
+      const errors = [];
+      if (!this.$v.alias.$dirty) return errors;
+      !this.$v.alias.required && errors.push("Введите алиас вакансии");
+      return errors;
+    },
+
+    alias: {
+        get(){
+           return translit(this.vacancy.title)
+        },
+        set(newValue){
+            this.vacancy.alias = newValue;
+        }
+
     }
+
+  },
+  watch: {
+    title: function (val) {
+      this.vacancy.alias = translit(this.title)
+    },
   },
 
   methods: {
     async submitCreateVacancyForm() {
+
+
       if (this.$v.$invalid) {
         this.$v.$touch();
         return;
@@ -109,18 +123,13 @@ export default {
 
       const formData = {
         title: this.vacancy.title,
+        alias: this.alias,
         content: this.vacancy.content,
         published: this.vacancy.published
       };
 
 
-
-      // cyrillicToTranslit().transform(formData.title, "_")
-      console.log(formData);
-
-console.log(formData.title);
-
-console.log( t(formData.title, this.lang) );
+console.log(formData);
 
       // try {
       //   await this.$store.dispatch("vacancy/createVacancy", formData);
