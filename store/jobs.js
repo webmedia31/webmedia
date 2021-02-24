@@ -21,9 +21,11 @@ export const actions = {
       commit('SET_ERROR', error)
       throw error
     }
-  }
+  },
+
 }
 
 export const getters = {
-  jobs: state => state.jobs
+  jobs: state => state.jobs,
+  jobsCount: state => state.jobs.length
 }

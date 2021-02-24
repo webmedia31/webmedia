@@ -3,10 +3,12 @@
     <ul>
       <li v-for="(job, key) in jobs" :key="key">
         <NuxtLink :to="`/admin/vacancy/${job.id}`">
-          <div class="vacancy_title">{{ job["ru-RU"].title }}</div>
+          <div class="vacancy_title">{{ job.title }}</div>
         </NuxtLink>
       </li>
     </ul>
+
+    <!-- {{ jobs}} -->
   </section>
 </template>
 

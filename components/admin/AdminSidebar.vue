@@ -7,7 +7,8 @@
     <section>
       <header>Вакансии</header>
       <ul>
-        <li class="active">
+        <li class="active" :data-value="vacanciesCount">
+          {{ $store.getters.jobs }}
           <NuxtLink to="/admin/vacancy" exact>Все вакансии</NuxtLink>
         </li>
 
@@ -17,10 +18,11 @@
         </li>
       </ul>
     </section>
+
     <section>
       <header>Статьи</header>
       <ul>
-        <li data-value="4">
+        <li>
           <NuxtLink to="/admin/article">Все статьи</NuxtLink>
         </li>
         <li class="new">
@@ -29,6 +31,7 @@
         </li>
       </ul>
     </section>
+
     <section>
       <header>Направления</header>
       <ul>
@@ -41,10 +44,9 @@
           <v-icon left dark small>mdi-plus-circle</v-icon>
           <NuxtLink to="/admin/activity/create">Добавить напрвление</NuxtLink>
         </li>
-
-
       </ul>
     </section>
+
     <section>
       <header>Разное</header>
       <ul>
@@ -59,10 +61,25 @@
           Add Category
         </li>
       </ul>
-
     </section>
   </nav>
 </template>
+
+<script>
+export default {
+  computed: {
+    vacanciesCount() {
+      console.log(this.$store.getters["jobs/jobs"]);
+      return this.$store.getters["jobs/jobs"].length;
+    },
+  },
+  async mounted() {
+    if (this.$store.getters["jobs/jobs"].length === 0) {
+      await this.$store.dispatch("jobs/fetchJobs");
+    }
+  }
+};
+</script>
 
 <style scoped>
 nav {
@@ -73,7 +90,7 @@ nav {
   left: 0;
   padding: 0px 22px;
   border-right: 2px solid #161e23;
-  background-color: #202B33;
+  background-color: #202b33;
 }
 nav a {
   color: #738491;
@@ -108,7 +125,9 @@ nav section ul li:after {
   content: attr(data-value);
   position: absolute;
   right: 0px;
-  width: 19px;
+  width: auto;
+  min-width: 21px;
+  padding: 0px 4px;
   background-color: #738491;
   font-size: 0.9rem;
   color: #202b33;

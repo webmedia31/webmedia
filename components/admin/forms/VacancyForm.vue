@@ -24,7 +24,7 @@
     <v-switch v-model="vacancy.published" :label="`Опубликовать`"></v-switch>
 
     <!-- SAVE BUTTON -->
-    <v-btn class="mr-4" @click="submitCreateVacancyForm">
+    <v-btn class="mr-4" color="success" @click="submitCreateVacancyForm">
       Сохранить
     </v-btn>
 
@@ -41,6 +41,17 @@ import { required } from "vuelidate/lib/validators";
 
 export default {
   // mixins: [validationMixin],
+  props: {
+    vacancy: {
+      type: Object,
+      required: false,
+      default: () => ({
+        title: "",
+        content: "",
+        published: false
+      })
+    }
+  },
 
   validations: {
     vacancy: {
@@ -49,15 +60,29 @@ export default {
     }
   },
 
-  data: () => ({
-    vacancy: {
-      title: "",
-      content: "",
-      published: false
-    }
-  }),
+  // data() {
+  //   return {
+  //     vacancy: this.vacancy
+  //       ? { ...this.vacancy }
+  //       : {
+  //           title: "",
+  //           content: "",
+  //           published: false
+  //         }
+  //   }
+  // },
 
   computed: {
+    // vacancy(){
+    //   return vacancy: this.vacancy
+    //     ? { ...this.vacancy }
+    //     : {
+    //         title: "",
+    //         content: "",
+    //         published: false
+    //       }
+    // },
+
     vacancyTitleErrors() {
       const errors = [];
       if (!this.$v.vacancy.title.$dirty) return errors;

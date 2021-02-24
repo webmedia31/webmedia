@@ -9,7 +9,7 @@
     </header>
 
     <div class="form">
-      <VacancyForm />
+      <VacancyForm :vacancy="loadedVacancy"/>
     </div>
   </section>
 </template>
@@ -20,5 +20,19 @@
 export default {
   name: "vacancy-edit",
   layout: "admin",
+  data: () => ({
+    loadedVacancy: {
+      title: "Сварщик",
+      content: "<p>Требования: <br>5 разряд</p>",
+      published: true
+    }
+  }),
+  mounted(){
+
+
+    console.log(this);
+
+
+  }
 };
 </script>

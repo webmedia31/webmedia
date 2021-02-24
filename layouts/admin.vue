@@ -1,18 +1,13 @@
 <template>
+  <v-app>
+    <div class="admin-layout">
+      <AdminSidebar />
 
-<v-app>
-
-  <div class="admin-layout">
-
-    <AdminSidebar />
-
-    <article>
-      <nuxt />
-    </article>
-  </div>
-
+      <article>
+        <nuxt />
+      </article>
+    </div>
   </v-app>
-
 </template>
 
 <script>
@@ -22,13 +17,15 @@ export default {
     return { titleTemplate: "%s | Админ панель Webmedia" };
   },
 
+  // async mounted() {
+  //   if (this.$store.getters["jobs/jobs"].length === 0) {
+  //     await this.$store.dispatch("jobs/fetchJobs");
+  //   }
+  // }
 };
 </script>
 
 <style>
-
-
-
 .admin-layout article {
   position: absolute;
   top: 0;
@@ -38,7 +35,7 @@ export default {
   overflow: auto;
   border-left: 2px solid #2a3843;
   padding: 0px 22px;
-  background-color: #202B33;
+  background-color: #202b33;
 }
 .admin-layout article header {
   margin-bottom: 30px;
@@ -88,6 +85,4 @@ export default {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
-
-
 </style>
