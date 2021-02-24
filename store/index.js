@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import translitFilter from '@/filters/translit.filter'
 
 import noticePlugin from '@/utils/notice.plugin'
 
+Vue.filter('transliterate', translitFilter)
 Vue.use(noticePlugin)
 Vue.use(Vuex)
 

@@ -78,6 +78,11 @@ export default {
       await this.$store.dispatch("jobs/fetchJobs");
     }
   }
+  // async fetch() {
+  //   if (this.$store.getters["jobs/jobs"].length === 0) {
+  //     await this.$store.dispatch("jobs/fetchJobs");
+  //   }
+  // }
 };
 </script>
 

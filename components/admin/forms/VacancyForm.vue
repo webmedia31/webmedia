@@ -38,6 +38,7 @@
 <script>
 // import { validationMixin } from "vuelidate";
 import { required } from "vuelidate/lib/validators";
+import t from '@/filters/translit.filter'
 
 export default {
   // mixins: [validationMixin],
@@ -112,7 +113,14 @@ export default {
         published: this.vacancy.published
       };
 
+
+
+      // cyrillicToTranslit().transform(formData.title, "_")
       console.log(formData);
+
+console.log(formData.title);
+
+console.log( t(formData.title, this.lang) );
 
       // try {
       //   await this.$store.dispatch("vacancy/createVacancy", formData);
