@@ -124,4 +124,7 @@ h3.underlined {
   height: 1px;
   background: linear-gradient(89.97deg, #ff7a23 -4.85%, #f03019 95.6%);
 }
+.v-icon.v-icon {
+  margin-left: 45px !important;
+}
 </style>

@@ -32,14 +32,11 @@ export default {
 }
 
 .v-expansion-panel-header {
-  padding: 0px;
+  padding: 10px 0px;
 }
-.v-expansion-panel--active > .v-expansion-panel-header {
-  min-height: 48px;
-}
-.v-application--is-ltr .v-expansion-panel-header__icon {
-  margin-left: 45px;
-}
+
+
+
 .v-expansion-panel--active:not(:first-child), .v-expansion-panel--active + .v-expansion-panel {
   margin-top: 0px;
 }
@@ -49,6 +46,7 @@ export default {
   font-size: 18px;
   letter-spacing: 0.07em;
   color: #8B8B8B;
+  margin: 0px;
 }
 .theme--dark.v-expansion-panels .v-expansion-panel {
   background-color: transparent;
@@ -57,4 +55,6 @@ export default {
 .theme--dark.v-expansion-panels .v-expansion-panel::after {
   border-color: rgba(255, 255, 255, 0.2);
 }
+
+
 </style>
