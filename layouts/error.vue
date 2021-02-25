@@ -5,7 +5,7 @@
         </h1>
 
         <p v-if="statusCode === 404">
-          <nuxt-link to="/">На главную</nuxt-link>
+          <a href="/">На главную</a>
         </p>
     </section>
 </template>

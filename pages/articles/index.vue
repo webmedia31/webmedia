@@ -1,4 +1,5 @@
 <template>
+<v-container>
   <section class="articles">
 
     <div class="articles-filter">
@@ -36,6 +37,7 @@
     </div>
 
   </section>
+  </v-container>
 </template>
 
 <script>

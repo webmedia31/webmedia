@@ -58,7 +58,7 @@ export default {
       required: false,
       default: () => ({
         title: "",
-        alias: translit(this.title),
+        alias: "",
         content: "",
         published: false
       })

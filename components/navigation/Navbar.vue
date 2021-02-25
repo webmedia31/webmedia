@@ -6,7 +6,7 @@
 
       <LinksAuth />
 
-      <ul class="navbar-menu d-flex">
+      <ul class="navbar-menu">
         <li v-for="(item, index) in navBarItems" :key="index">
           <NuxtLink no-prefetch :to="item.to">
             {{ item.title }}
@@ -107,6 +107,7 @@ export default {
 .navbar-menu {
   list-style: none;
   align-items: center;
+  display: none !important;
 }
 .navbar-menu a {
   color: #fffcf9;
@@ -118,6 +119,8 @@ export default {
 .navbar-menu a.nuxt-link-active {
   text-decoration: underline;
 }
+
+
 
 /* sidebar */
 .sidebar-toggle {

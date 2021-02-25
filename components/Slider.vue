@@ -61,11 +61,13 @@ export default {
         left: "20rem"
       },
       breakpoints: {
-        640: {
+        0: {
+          perPage: 1,
           gap: "0px",
         },
         1200: {
-          gap: "170px",
+          perPage: 1,
+          gap: "0px",
         }
       }
     }
@@ -104,7 +106,7 @@ export default {
 }
 
 .splide__pagination {
-  bottom: -77px;
+  /* bottom: -77px; */
 }
 
 .splide__pagination__page {
