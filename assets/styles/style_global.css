@@ -28,6 +28,10 @@ html {
   background-color: #000;
 }
 
+body {
+  overflow: hidden;
+}
+
 * {
   font-family: GilroyRegular;
   color: #FFFCF9;
