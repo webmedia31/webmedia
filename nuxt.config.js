@@ -58,7 +58,7 @@ export default {
         services: {
           auth: true,
           // firestore: true,
-          // functions: true,
+          functions: true,
           // storage: true,
           database: true,
           messaging: true,
