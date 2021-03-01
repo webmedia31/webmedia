@@ -17,8 +17,7 @@
     "cyrillic-to-translit-js": "^3.1.0",
     "firebase": "^8.2.4",
     "nuxt": "^2.14.12",
-    "vuelidate": "^0.7.6",
-    "heroku-postbuild": "npm run build"
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.3",

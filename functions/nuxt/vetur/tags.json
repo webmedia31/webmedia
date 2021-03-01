@@ -1,0 +1,128 @@
+{
+  "Activities": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/Activities.vue"
+  },
+  "LazyActivities": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/Activities.vue"
+  },
+  "JobList": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/JobList.vue"
+  },
+  "LazyJobList": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/JobList.vue"
+  },
+  "Slider": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/Slider.vue"
+  },
+  "LazySlider": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/Slider.vue"
+  },
+  "Teammate": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/Teammate.vue"
+  },
+  "LazyTeammate": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/Teammate.vue"
+  },
+  "AdminJobList": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/admin/AdminJobList.vue"
+  },
+  "LazyAdminJobList": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/admin/AdminJobList.vue"
+  },
+  "AdminSidebar": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/admin/AdminSidebar.vue"
+  },
+  "LazyAdminSidebar": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/admin/AdminSidebar.vue"
+  },
+  "FeedbackForm": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/forms/FeedbackForm.vue"
+  },
+  "LazyFeedbackForm": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/forms/FeedbackForm.vue"
+  },
+  "LoginForm": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/forms/LoginForm.vue"
+  },
+  "LazyLoginForm": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/forms/LoginForm.vue"
+  },
+  "RegisterForm": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/forms/RegisterForm.vue"
+  },
+  "LazyRegisterForm": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/forms/RegisterForm.vue"
+  },
+  "LinkArrowed": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/links/LinkArrowed.vue"
+  },
+  "LazyLinkArrowed": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/links/LinkArrowed.vue"
+  },
+  "LinkPolitics": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/links/LinkPolitics.vue"
+  },
+  "LazyLinkPolitics": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/links/LinkPolitics.vue"
+  },
+  "LinkRotating": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/links/LinkRotating.vue"
+  },
+  "LazyLinkRotating": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/links/LinkRotating.vue"
+  },
+  "LinksAuth": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/links/LinksAuth.vue"
+  },
+  "LazyLinksAuth": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/links/LinksAuth.vue"
+  },
+  "LinkShowreel": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/links/LinkShowreel.vue"
+  },
+  "LazyLinkShowreel": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/links/LinkShowreel.vue"
+  },
+  "LinksSocial": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/links/LinksSocial.vue"
+  },
+  "LazyLinksSocial": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/links/LinksSocial.vue"
+  },
+  "Navbar": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/navigation/Navbar.vue"
+  },
+  "LazyNavbar": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/navigation/Navbar.vue"
+  },
+  "NavBurger": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/navigation/NavBurger.vue"
+  },
+  "LazyNavBurger": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/navigation/NavBurger.vue"
+  },
+  "Arrow": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/ui/Arrow.vue"
+  },
+  "LazyArrow": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/ui/Arrow.vue"
+  },
+  "Logo": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/ui/Logo.vue"
+  },
+  "LazyLogo": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/ui/Logo.vue"
+  },
+  "Snackbar": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/ui/Snackbar.vue"
+  },
+  "LazySnackbar": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/ui/Snackbar.vue"
+  },
+  "VacancyForm": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/admin/forms/VacancyForm.vue"
+  },
+  "LazyVacancyForm": {
+    "description": "Auto imported from C:/OSPanel/domains/webmedia-nuxt/components/admin/forms/VacancyForm.vue"
+  }
+}

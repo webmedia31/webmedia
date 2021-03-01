@@ -1,0 +1,140 @@
+[
+  {
+    "name": "страница-на-кириллице",
+    "path": "/%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B0-%D0%BA%D0%B8%D1%80%D0%B8%D0%BB%D0%BB%D0%B8%D1%86%D0%B5",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\страница-на-кириллице\\\\index.vue",
+    "chunkName": "pages/страница-на-кириллице/index"
+  },
+  {
+    "name": "about",
+    "path": "/about",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\about\\\\index.vue",
+    "chunkName": "pages/about/index"
+  },
+  {
+    "name": "admin",
+    "path": "/admin",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\index.vue",
+    "chunkName": "pages/admin/index"
+  },
+  {
+    "name": "articles",
+    "path": "/articles",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\articles\\\\index.vue",
+    "chunkName": "pages/articles/index"
+  },
+  {
+    "name": "calculator",
+    "path": "/calculator",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\calculator\\\\index.vue",
+    "chunkName": "pages/calculator/index"
+  },
+  {
+    "name": "contacts",
+    "path": "/contacts",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\contacts\\\\index.vue",
+    "chunkName": "pages/contacts/index"
+  },
+  {
+    "name": "job",
+    "path": "/job",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\job\\\\index.vue",
+    "chunkName": "pages/job/index"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\login\\\\index.vue",
+    "chunkName": "pages/login/index"
+  },
+  {
+    "name": "politics",
+    "path": "/politics",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\politics\\\\index.vue",
+    "chunkName": "pages/politics/index"
+  },
+  {
+    "name": "portfolio",
+    "path": "/portfolio",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\portfolio\\\\index.vue",
+    "chunkName": "pages/portfolio/index"
+  },
+  {
+    "name": "register",
+    "path": "/register",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\register\\\\index.vue",
+    "chunkName": "pages/register/index"
+  },
+  {
+    "name": "admin-activity",
+    "path": "/admin/activity",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\activity\\\\index.vue",
+    "chunkName": "pages/admin/activity/index"
+  },
+  {
+    "name": "admin-article",
+    "path": "/admin/article",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\article\\\\index.vue",
+    "chunkName": "pages/admin/article/index"
+  },
+  {
+    "name": "admin-auth",
+    "path": "/admin/auth",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\auth\\\\index.vue",
+    "chunkName": "pages/admin/auth/index"
+  },
+  {
+    "name": "admin-demo",
+    "path": "/admin/demo",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\demo.vue",
+    "chunkName": "pages/admin/demo"
+  },
+  {
+    "name": "admin-vacancy",
+    "path": "/admin/vacancy",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\vacancy\\\\index.vue",
+    "chunkName": "pages/admin/vacancy/index"
+  },
+  {
+    "name": "admin-article-create",
+    "path": "/admin/article/create",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\article\\\\create\\\\index.vue",
+    "chunkName": "pages/admin/article/create/index"
+  },
+  {
+    "name": "admin-vacancy-create",
+    "path": "/admin/vacancy/create",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\vacancy\\\\create\\\\index.vue",
+    "chunkName": "pages/admin/vacancy/create/index"
+  },
+  {
+    "name": "admin-activity-activityId",
+    "path": "/admin/activity/:activityId",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\activity\\\\_activityId\\\\index.vue",
+    "chunkName": "pages/admin/activity/_activityId/index"
+  },
+  {
+    "name": "admin-article-articleId",
+    "path": "/admin/article/:articleId",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\article\\\\_articleId\\\\index.vue",
+    "chunkName": "pages/admin/article/_articleId/index"
+  },
+  {
+    "name": "admin-vacancy-vacancyId",
+    "path": "/admin/vacancy/:vacancyId",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\vacancy\\\\_vacancyId\\\\index.vue",
+    "chunkName": "pages/admin/vacancy/_vacancyId/index"
+  },
+  {
+    "name": "articles-alias",
+    "path": "/articles/:alias",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\articles\\\\_alias\\\\index.vue",
+    "chunkName": "pages/articles/_alias/index"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]
