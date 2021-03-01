@@ -5,7 +5,7 @@
   "functions": {
     "source": "functions",
     "predeploy": [
-      "npm run build && rmdir functions/nuxt /s /q && copy -r .nuxt/ functions/ && copy nuxt.config.js functions/"
+      ""
     ]
   },
   "hosting": {
