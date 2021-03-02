@@ -3,138 +3,161 @@
     "name": "страница-на-кириллице",
     "path": "/%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B0-%D0%BA%D0%B8%D1%80%D0%B8%D0%BB%D0%BB%D0%B8%D1%86%D0%B5",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\страница-на-кириллице\\\\index.vue",
-    "chunkName": "pages/страница-на-кириллице/index"
+    "chunkName": "pages/страница-на-кириллице/index",
+    "_name": "_1cf8ee9c"
   },
   {
     "name": "about",
     "path": "/about",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\about\\\\index.vue",
-    "chunkName": "pages/about/index"
+    "chunkName": "pages/about/index",
+    "_name": "_7d96051d"
   },
   {
     "name": "admin",
     "path": "/admin",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\index.vue",
-    "chunkName": "pages/admin/index"
+    "chunkName": "pages/admin/index",
+    "_name": "_1143181b"
   },
   {
     "name": "articles",
     "path": "/articles",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\articles\\\\index.vue",
-    "chunkName": "pages/articles/index"
+    "chunkName": "pages/articles/index",
+    "_name": "_301936a6"
   },
   {
     "name": "calculator",
     "path": "/calculator",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\calculator\\\\index.vue",
-    "chunkName": "pages/calculator/index"
+    "chunkName": "pages/calculator/index",
+    "_name": "_13d6f270"
   },
   {
     "name": "contacts",
     "path": "/contacts",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\contacts\\\\index.vue",
-    "chunkName": "pages/contacts/index"
+    "chunkName": "pages/contacts/index",
+    "_name": "_58064cd7"
   },
   {
     "name": "job",
     "path": "/job",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\job\\\\index.vue",
-    "chunkName": "pages/job/index"
+    "chunkName": "pages/job/index",
+    "_name": "_367706ed"
   },
   {
     "name": "login",
     "path": "/login",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\login\\\\index.vue",
-    "chunkName": "pages/login/index"
+    "chunkName": "pages/login/index",
+    "_name": "_53c277c1"
   },
   {
     "name": "politics",
     "path": "/politics",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\politics\\\\index.vue",
-    "chunkName": "pages/politics/index"
+    "chunkName": "pages/politics/index",
+    "_name": "_d245a5ee"
   },
   {
     "name": "portfolio",
     "path": "/portfolio",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\portfolio\\\\index.vue",
-    "chunkName": "pages/portfolio/index"
+    "chunkName": "pages/portfolio/index",
+    "_name": "_823b3efc"
   },
   {
     "name": "register",
     "path": "/register",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\register\\\\index.vue",
-    "chunkName": "pages/register/index"
+    "chunkName": "pages/register/index",
+    "_name": "_212e6c87"
   },
   {
     "name": "admin-activity",
     "path": "/admin/activity",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\activity\\\\index.vue",
-    "chunkName": "pages/admin/activity/index"
+    "chunkName": "pages/admin/activity/index",
+    "_name": "_6a0030ec"
   },
   {
     "name": "admin-article",
     "path": "/admin/article",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\article\\\\index.vue",
-    "chunkName": "pages/admin/article/index"
+    "chunkName": "pages/admin/article/index",
+    "_name": "_57bb85a3"
   },
   {
     "name": "admin-auth",
     "path": "/admin/auth",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\auth\\\\index.vue",
-    "chunkName": "pages/admin/auth/index"
+    "chunkName": "pages/admin/auth/index",
+    "_name": "_1605bd33"
   },
   {
     "name": "admin-demo",
     "path": "/admin/demo",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\demo.vue",
-    "chunkName": "pages/admin/demo"
+    "chunkName": "pages/admin/demo",
+    "_name": "_19ebd1ac"
   },
   {
     "name": "admin-vacancy",
     "path": "/admin/vacancy",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\vacancy\\\\index.vue",
-    "chunkName": "pages/admin/vacancy/index"
+    "chunkName": "pages/admin/vacancy/index",
+    "_name": "_3eada0fe"
   },
   {
     "name": "admin-article-create",
     "path": "/admin/article/create",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\article\\\\create\\\\index.vue",
-    "chunkName": "pages/admin/article/create/index"
+    "chunkName": "pages/admin/article/create/index",
+    "_name": "_1a2f4aa7"
   },
   {
     "name": "admin-vacancy-create",
     "path": "/admin/vacancy/create",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\vacancy\\\\create\\\\index.vue",
-    "chunkName": "pages/admin/vacancy/create/index"
+    "chunkName": "pages/admin/vacancy/create/index",
+    "_name": "_49ac49fc"
   },
   {
     "name": "admin-activity-activityId",
     "path": "/admin/activity/:activityId",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\activity\\\\_activityId\\\\index.vue",
-    "chunkName": "pages/admin/activity/_activityId/index"
+    "chunkName": "pages/admin/activity/_activityId/index",
+    "_name": "_080d8ddf"
   },
   {
     "name": "admin-article-articleId",
     "path": "/admin/article/:articleId",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\article\\\\_articleId\\\\index.vue",
-    "chunkName": "pages/admin/article/_articleId/index"
+    "chunkName": "pages/admin/article/_articleId/index",
+    "_name": "_69f75e31"
   },
   {
     "name": "admin-vacancy-vacancyId",
     "path": "/admin/vacancy/:vacancyId",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\admin\\\\vacancy\\\\_vacancyId\\\\index.vue",
-    "chunkName": "pages/admin/vacancy/_vacancyId/index"
+    "chunkName": "pages/admin/vacancy/_vacancyId/index",
+    "_name": "_0304f9a7"
   },
   {
     "name": "articles-alias",
     "path": "/articles/:alias",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\articles\\\\_alias\\\\index.vue",
-    "chunkName": "pages/articles/_alias/index"
+    "chunkName": "pages/articles/_alias/index",
+    "_name": "_2d4ddf88"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\OSPanel\\\\domains\\\\webmedia-nuxt\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_67b05aec"
   }
 ]

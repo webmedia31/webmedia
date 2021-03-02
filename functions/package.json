@@ -20,7 +20,11 @@
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/firebase": "^7.4.1",
     "@nuxtjs/pwa": "^3.3.4",
-    "@splidejs/vue-splide": "^0.3.5"
+    "@splidejs/vue-splide": "^0.3.5",
+    "core-js": "^3.8.2",
+    "cyrillic-to-translit-js": "^3.1.0",
+    "firebase": "^8.2.4",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "eslint": "^7.6.0",
