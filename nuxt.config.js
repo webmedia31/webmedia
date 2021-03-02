@@ -82,6 +82,17 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extractCss: true,
+    babel: {
+      presets: ({ isServer }) => {
+        [
+          '@nuxt/babel-preset-app',
+          {
+            targets: isServer ? { node: '10.21.0' } : { browsers: ['defaults'] }
+          }
+        ]
+      }
+    },
     transpile: [
       '@splidejs/vue-splide',
     ],

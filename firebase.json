@@ -9,6 +9,9 @@
     ]
   },
   "hosting": {
+    "predeploy": [
+      "del public && copy .nuxt/dist/client public/_nuxt "
+    ],
     "public": "public",
     "ignore": [
       "firebase.json",
@@ -17,7 +20,7 @@
     ],
     "rewrites": [{
       "source": "**",
-      "destination": "/index.html"
+      "function": "ssrapp"
     }]
   },
   "storage": {
