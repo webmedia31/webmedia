@@ -11,6 +11,8 @@
     <div class="form">
       <VacancyForm :vacancy="loadedVacancy"/>
     </div>
+
+    {{ this.$store.getters['jobs/loadedjob'] }}
   </section>
 </template>
 
@@ -27,12 +29,16 @@ export default {
       published: true
     }
   }),
-  mounted(){
+  async fetch({ store, params}) {
+    const jobId = params.vacancyId
 
-
-    console.log(this);
-
-
+    if (Object.keys(store.getters["jobs/job"]).length === 0) {
+      await store.dispatch("jobs/fetchJobdById", jobId);
+    }
+  },
+  beforeRouteLeave (to, from, next) {
+    this.$store.commit('jobs/SET_JOB', {});
+    next()
   }
 };
 </script>

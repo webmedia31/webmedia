@@ -1,10 +1,13 @@
 <template>
-  <div class="row">
-    <div class="col s12 m4 offset-m4 l4 offset-l4">
+<v-row class="mb-6" no-gutters>
+    <v-col md="4" offset-md="4">
       <h1>Вход</h1>
-      <LoginForm />
-    </div>
-  </div>
+
+      <v-card class="pa-2" outlined tile>
+        <LoginForm />
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script>

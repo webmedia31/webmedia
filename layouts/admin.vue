@@ -7,6 +7,8 @@
         <nuxt />
       </article>
     </div>
+
+    <Snackbar />
   </v-app>
 </template>
 
@@ -57,7 +59,7 @@ export default {
   float: right;
   width: 48px;
   height: 48px;
-  background-image: url("https://s3.amazonaws.com/uifaces/faces/twitter/peterlandt/48.jpg");
+  /* background-image: url("https://s3.amazonaws.com/uifaces/faces/twitter/peterlandt/48.jpg"); */
   -moz-border-radius: 48px;
   -webkit-border-radius: 48px;
   border-radius: 48px;

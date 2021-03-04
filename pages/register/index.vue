@@ -1,12 +1,10 @@
 <template>
   <v-row class="mb-6" no-gutters>
-    <h1>Регистрация</h1>
-
     <v-col md="4" offset-md="4">
+      <h1>Регистрация</h1>
+
       <v-card class="pa-2" outlined tile>
-
         <RegisterForm />
-
       </v-card>
     </v-col>
   </v-row>

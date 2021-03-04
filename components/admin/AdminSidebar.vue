@@ -69,7 +69,6 @@
 export default {
   computed: {
     vacanciesCount() {
-      console.log(this.$store.getters["jobs/jobs"]);
       return this.$store.getters["jobs/jobs"].length;
     },
   },
