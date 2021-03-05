@@ -10,6 +10,7 @@ Vue.use(Vuex)
 
 export const state = () => ({
   error: null,
+  notice: null
 })
 
 export const mutations = {
@@ -18,6 +19,12 @@ export const mutations = {
   },
   CLEAR_ERROR(state) {
     state.error = null
+  },
+  SET_NOTICE(state, notice) {
+    state.notice = notice
+  },
+  CLEAR_NOTICE(state) {
+    state.notice = null
   }
 }
 
@@ -26,5 +33,6 @@ export const actions = {
 }
 
 export const getters = {
-  error: s => s.error
+  error: s => s.error,
+  notice: s => s.notice
 }

@@ -31,13 +31,13 @@ export default {
   }),
   async fetch({ store, params}) {
     const jobId = params.vacancyId
-
-    if (Object.keys(store.getters["jobs/job"]).length === 0) {
+    if (Object.keys(store.getters["jobs/editingJob"]).length === 0) {
       await store.dispatch("jobs/fetchJobdById", jobId);
     }
   },
   beforeRouteLeave (to, from, next) {
-    this.$store.commit('jobs/SET_JOB', {});
+    // remove editing job
+    this.$store.commit('jobs/SET_EDITINGJOB', {});
     next()
   }
 };

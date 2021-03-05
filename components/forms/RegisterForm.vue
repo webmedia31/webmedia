@@ -135,9 +135,10 @@ export default {
       try {
         await this.$store.dispatch('auth/registerUser', formData)
         // this.$router.push("/");
-      } catch (e) {}
+      } catch (e) {
+        console.log(e);
+      }
     },
-
 
     clear() {
       this.$v.$reset();

@@ -45,17 +45,19 @@
 </template>
 
 <script>
-// import { validationMixin } from "vuelidate";
 import { required } from "vuelidate/lib/validators";
 import translit from "@/filters/translit.filter";
 
-import { mapGetters,  mapActions} from 'vuex'
-
+import { mapGetters, mapActions } from "vuex";
 
 export default {
-  // data: () => ({
-  //   vacancy: {}
-  // }),
+  data: () => ({
+    vacancy: {
+      title: "",
+      content: "",
+      published: false
+    }
+  }),
   validations: {
     vacancy: {
       title: { required },
@@ -65,10 +67,20 @@ export default {
   },
 
   computed: {
-    vacancy() {
-      // this.vacancy = this.$store.getters["jobs/job"];
-      return this.$store.getters["jobs/job"];
-    },
+    // vacancy() {
+    //   // this.vacancy = this.$store.getters["jobs/editingJob"];
+
+
+    //   if(Object.keys(this.$store.getters["jobs/editingJob"]).length === 0) {
+    //     return {
+    //       title: "",
+    //       content: "",
+    //       published: false
+    //     }
+    //   } else {
+
+    //   }
+    // },
 
     vacancyTitleErrors() {
       const errors = [];
@@ -141,10 +153,15 @@ export default {
   },
 
   mounted() {
-    // console.log(this.$store.getters["jobs/job"]);
-    // this.vacancy = this.$store.getters["jobs/job"]
-  },
+    console.log(this.$store.getters["jobs/editingJob"]);
 
+console.log(this.vacancy);
+
+
+    this.vacancy = this.$store.getters["jobs/editingJob"]
+console.log(this.vacancy);
+
+  },
 
   methods: {
     async submitVacancyForm() {
@@ -153,27 +170,52 @@ export default {
         return;
       }
 
-      const formData = {
-        id: this.vacancy.id,
-        title: this.vacancy.title,
-        alias: this.alias,
-        content: this.vacancy.content,
-        published: this.vacancy.published
-      };
 
-      console.log(formData);
+      console.log(this.vacancy.published);
 
-      // try {
-      //   await this.$store.dispatch("vacancy/createVacancy", formData);
-      // } catch (e) {}
+      if (this.vacancy.id) {
+        //update vacancy
+        const formData = {
+          id: this.vacancy.id,
+          title: this.vacancy.title,
+          // alias: this.alias,
+          content: this.vacancy.content,
+          published: this.vacancy.published
+          // published: this.vacancy.published || false
+        };
 
-      try {
-        await this.$store.dispatch("jobs/updateVacancy", formData);
+        try {
+          await this.$store.dispatch("jobs/updateVacancy", formData);
 
-        console.log("Запись успешно создана");
-        this.$notice("Запись успешно создана");
-      } catch (e) {
-        console.log(e);
+          console.log("Запись успешно обновлена");
+          // this.$noticeError("Запись успешно обновлена");
+          // this.$notice("Запись успешно обновлена");
+        } catch (e) {
+          console.log(e);
+        }
+      } else {
+        // create vacancy
+        const formData = {
+          title: this.vacancy.title,
+          content: this.vacancy.content,
+          published: this.vacancy.published
+        };
+
+        try {
+          await this.$store.dispatch("jobs/createVacancy", formData);
+          // console.log("Запись успешно добавлена");
+          // this.$noticeError("Запись успешно добавлена");
+          // this.$notice("Запись успешно добавлена");
+        } catch (e) {
+          // commit('SET_ERROR', e, { root: true })
+          // throw e
+
+          this.$store.commit('SET_ERROR', e);
+
+
+
+          // this.$noticeError(console.log(e));
+        }
       }
     },
 

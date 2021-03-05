@@ -31,11 +31,20 @@ export default {
   computed: {
     error() {
       return this.$store.getters.error;
+    },
+    notice() {
+      return this.$store.getters.notice;
     }
   },
   watch: {
     error(firebaseError) {
-      this.$noticeError(notices[firebaseError.code] || "Что-то пошло не так");
+      this.$noticeFirebaseError(notices[firebaseError.code] || "Что-то пошло не так");
+    },
+    error(err) {
+      this.$noticeError(err || "Что-то пошло не так");
+    },
+    notice(msgHtml) {
+      this.$notice(msgHtml || "Здесь должно было быть уведомление");
     }
   }
 }

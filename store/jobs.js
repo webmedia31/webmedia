@@ -3,20 +3,33 @@ import 'firebase/database'
 
 export const state = () => ({
   jobs: [],
-  job: {}
+  editingJob: {}
 })
 
 export const mutations = {
   SET_JOBS(state, jobs) {
     state.jobs = jobs
   },
-  SET_JOB(state, job) {
-    state.job = job
-  }
+  SET_EDITINGJOB(state, job) {
+    state.editingJob = job
+  },
+  ADD_JOB(state, job) {
+    console.log('add_job commit');
+    state.jobs.push(job)
+  },
+  UPDATE_JOB(state, job) {
+
+    console.log(state);
+    console.log(job);
+
+
+    // console.log('add_job commit');
+    // state.jobs.push(job)
+  },
 }
 
 export const actions = {
-  // FETCH ALL JOBS
+  // FETCH ALL VACANCIES
   async fetchJobs({ commit, dispatch }) {
     try {
       const jobs = (await firebase.database().ref(`/jobs`).once('value')).val() || {}
@@ -28,7 +41,7 @@ export const actions = {
     }
   },
 
-  // FETCH SINGLE JOB
+  // FETCH SINGLE VACANCY
   async fetchJobdById({ commit, dispatch }, id) {
     try {
       const job = (await firebase.database().ref(`/jobs`).child(id).once('value')).val() || {}
@@ -36,28 +49,45 @@ export const actions = {
         id: id,
         ...job
       }
-      commit('SET_JOB', jobData)
+      commit('SET_EDITINGJOB', jobData)
     } catch (error) {
       commit('SET_ERROR', error)
       throw error
     }
   },
 
-  // FETCH SINGLE JOB
+  // CREATE VACANCY
+  async createVacancy({ dispatch, commit }, vacancy) {
+    try {
+      // return await firebase.database().ref(`/jobs`).push(vacancy)
+
+      console.log(await firebase.database().ref(`/jobs`).push(vacancy));
+
+      commit('ADD_JOB', e)
+    } catch (e) {
+
+      console.log(e);
+
+
+
+      // commit('SET_ERROR', e, { root: true })
+
+
+
+      throw e
+    }
+  },
+
+  // UPDATE VACANCY
   async updateVacancy({ dispatch, commit, getters }, toUpdate) {
     try {
-      const updateData = {...getters.info, ...toUpdate }
       let vacancyId = toUpdate.id;
 
-      await firebase.database().ref(`/jobs/${vacancyId}`).update(updateData)
-
-
-
-      // commit('setVacancyData', updateData)
-
+      await firebase.database().ref(`/jobs/${vacancyId}`).update(toUpdate)
+      commit('UPDATE_JOB', toUpdate)
 
     } catch (e) {
-      commit('setError', e)
+      commit('SET_ERROR', e, { root: true })
       throw e
     }
   }
@@ -66,6 +96,6 @@ export const actions = {
 
 export const getters = {
   jobs: state => state.jobs,
-  job: state => state.job,
+  editingJob: state => state.editingJob,
   jobsCount: state => state.jobs.length
 }
