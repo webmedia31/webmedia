@@ -12,6 +12,9 @@ export const mutations = {
   },
   SET_EDITINGJOB(state, job) {
     state.editingJob = job
+
+    // state.editingJob = Object.assign({}, job.editingJob)
+    // state.someObj = Object.assign({}, payload.someObj)
   },
   ADD_JOB(state, job) {
     console.log('add_job commit');
@@ -21,6 +24,8 @@ export const mutations = {
 
     console.log(state);
     console.log(job);
+
+    // state.someObj = Object.assign({}, payload.someObj)
 
 
     // console.log('add_job commit');
@@ -51,7 +56,7 @@ export const actions = {
       }
       commit('SET_EDITINGJOB', jobData)
     } catch (error) {
-      commit('SET_ERROR', error)
+      commit('SET_ERROR', error, { root: true })
       throw error
     }
   },
@@ -59,18 +64,14 @@ export const actions = {
   // CREATE VACANCY
   async createVacancy({ dispatch, commit }, vacancy) {
     try {
-      // return await firebase.database().ref(`/jobs`).push(vacancy)
 
-      console.log(await firebase.database().ref(`/jobs`).push(vacancy));
+      await firebase.database().ref(`/jobs`).push(vacancy)
 
+      // redirect to edit new added post ??
       commit('ADD_JOB', e)
     } catch (e) {
 
-      console.log(e);
-
-
-
-      // commit('SET_ERROR', e, { root: true })
+      commit('SET_ERROR', e, { root: true })
 
 
 
@@ -96,6 +97,9 @@ export const actions = {
 
 export const getters = {
   jobs: state => state.jobs,
-  editingJob: state => state.editingJob,
+
+  // editingJob: state => state.editingJob,
+  editingJob: state => Object.assign({}, state.editingJob), //fixed [vuex] Do not mutate vuex store state outside mutation handlers. ERROR BUT FIALS VALIDATION?
+
   jobsCount: state => state.jobs.length
 }

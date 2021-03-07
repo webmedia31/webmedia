@@ -38,13 +38,10 @@ export default {
   },
   watch: {
     error(firebaseError) {
-      this.$noticeFirebaseError(notices[firebaseError.code] || "Что-то пошло не так");
+      this.$noticeError(notices[firebaseError.code] || firebaseError);
     },
-    error(err) {
-      this.$noticeError(err || "Что-то пошло не так");
-    },
-    notice(msgHtml) {
-      this.$notice(msgHtml || "Здесь должно было быть уведомление");
+    notice(msg) {
+      this.$notice(msg || "Здесь должно было быть уведомление");
     }
   }
 }

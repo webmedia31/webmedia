@@ -11,7 +11,7 @@
     ></v-text-field>
 
     <!-- VACANCY ALIAS -->
-    <v-text-field
+    <!-- <v-text-field
       v-model="alias"
       :error-messages="vacancyAliasErrors"
       label="Алиас URL"
@@ -19,7 +19,7 @@
       disabled
       @input="$v.alias.$touch()"
       @blur="$v.alias.$touch()"
-    ></v-text-field>
+    ></v-text-field> -->
 
     <!-- VACANCY CONTENT -->
     <v-textarea
@@ -51,36 +51,33 @@ import translit from "@/filters/translit.filter";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
-  data: () => ({
-    vacancy: {
-      title: "",
-      content: "",
-      published: false
-    }
-  }),
+  // data: () => ({
+  //   vacancy: {
+  //     title: "",
+  //     content: "",
+  //     published: false
+  //   }
+  // }),
   validations: {
     vacancy: {
       title: { required },
       content: { required }
     },
-    alias: { required }
+    // alias: { required }
   },
 
   computed: {
-    // vacancy() {
-    //   // this.vacancy = this.$store.getters["jobs/editingJob"];
-
-
-    //   if(Object.keys(this.$store.getters["jobs/editingJob"]).length === 0) {
-    //     return {
-    //       title: "",
-    //       content: "",
-    //       published: false
-    //     }
-    //   } else {
-
-    //   }
-    // },
+    vacancy() {
+      if(Object.keys(this.$store.getters["jobs/editingJob"]).length === 0) {
+        return {
+          title: "",
+          content: "",
+          published: false
+        }
+      } else {
+        return this.$store.getters["jobs/editingJob"]
+      }
+    },
 
     vacancyTitleErrors() {
       const errors = [];
@@ -96,21 +93,21 @@ export default {
         errors.push("Введите текст вакансии");
       return errors;
     },
-    vacancyAliasErrors() {
-      const errors = [];
-      if (!this.$v.alias.$dirty) return errors;
-      !this.$v.alias.required && errors.push("Введите алиас вакансии");
-      return errors;
-    },
+    // vacancyAliasErrors() {
+    //   const errors = [];
+    //   if (!this.$v.alias.$dirty) return errors;
+    //   !this.$v.alias.required && errors.push("Введите алиас вакансии");
+    //   return errors;
+    // },
 
-    alias: {
-      get() {
-        return translit(this.vacancy.title);
-      },
-      set(newValue) {
-        this.vacancy.alias = newValue;
-      }
-    }
+    // alias: {
+    //   get() {
+    //     return translit(this.vacancy.title);
+    //   },
+    //   set(newValue) {
+    //     this.vacancy.alias = newValue;
+    //   }
+    // }
   },
 
   // methods: {
@@ -153,13 +150,11 @@ export default {
   },
 
   mounted() {
-    console.log(this.$store.getters["jobs/editingJob"]);
+    // console.log(this.$store.getters["jobs/editingJob"]);
 
-console.log(this.vacancy);
-
-
-    this.vacancy = this.$store.getters["jobs/editingJob"]
-console.log(this.vacancy);
+    // console.log(this.vacancy);
+    // this.vacancy = this.$store.getters["jobs/editingJob"]
+    // console.log(this.vacancy);
 
   },
 
@@ -169,7 +164,6 @@ console.log(this.vacancy);
         this.$v.$touch();
         return;
       }
-
 
       console.log(this.vacancy.published);
 
@@ -187,9 +181,9 @@ console.log(this.vacancy);
         try {
           await this.$store.dispatch("jobs/updateVacancy", formData);
 
-          console.log("Запись успешно обновлена");
-          // this.$noticeError("Запись успешно обновлена");
-          // this.$notice("Запись успешно обновлена");
+          this.$store.commit('SET_NOTICE', "Запись успешно обновлена");
+
+
         } catch (e) {
           console.log(e);
         }

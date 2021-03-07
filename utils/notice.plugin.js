@@ -5,6 +5,9 @@ export default {
       this.snackbar.text = html
       this.snackbar.timeout = 5000
       this.snackbar.visible = true
+      setTimeout(() => {
+        this.$store.commit('CLEAR_NOTICE');
+      }, 5000)
     }
 
     Vue.prototype.$noticeError = function(html) {
