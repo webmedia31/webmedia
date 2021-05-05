@@ -20,10 +20,17 @@ export const mutations = {
     console.log('add_job commit');
     state.jobs.push(job)
   },
-  UPDATE_JOB(state, job) {
+  UPDATE_JOB(state, jobData) {
 
     console.log(state);
-    console.log(job);
+    console.log(jobData);
+
+    state.jobs.forEach((job, index) => {
+      if (job.id === jobData.id) {
+        state.jobs[index] = jobData
+      }
+    });
+
 
     // state.someObj = Object.assign({}, payload.someObj)
 
@@ -49,12 +56,12 @@ export const actions = {
   // FETCH SINGLE VACANCY
   async fetchJobdById({ commit, dispatch }, id) {
     try {
-      const job = (await firebase.database().ref(`/jobs`).child(id).once('value')).val() || {}
-      const jobData = {
+      const vacancy = (await firebase.database().ref(`/jobs`).child(id).once('value')).val() || {}
+      const vacancyData = {
         id: id,
-        ...job
+        ...vacancy
       }
-      commit('SET_EDITINGJOB', jobData)
+      commit('SET_EDITINGJOB', vacancyData)
     } catch (error) {
       commit('SET_ERROR', error, { root: true })
       throw error
@@ -62,20 +69,21 @@ export const actions = {
   },
 
   // CREATE VACANCY
-  async createVacancy({ dispatch, commit }, vacancy) {
+  async createVacancy({ dispatch, commit, route }, vacancy) {
     try {
+      const createRes = await firebase.database().ref(`/jobs`).push(vacancy)
+      const id = createRes.path.pieces_[1]; // vacancy id
+      const toUpdate = {...vacancy, id }
 
-      await firebase.database().ref(`/jobs`).push(vacancy)
+      // update new added vacancy with, add id
+      await firebase.database().ref(`/jobs/${id}`).update(toUpdate)
+      commit('ADD_JOB', toUpdate)
 
-      // redirect to edit new added post ??
-      commit('ADD_JOB', e)
-    } catch (e) {
-
-      commit('SET_ERROR', e, { root: true })
-
-
-
-      throw e
+      // redirect to edit new added post
+      this.$router.push(`/admin/vacancy/${id}`)
+    } catch (error) {
+      commit('SET_ERROR', error, { root: true })
+      throw error
     }
   },
 
@@ -87,9 +95,9 @@ export const actions = {
       await firebase.database().ref(`/jobs/${vacancyId}`).update(toUpdate)
       commit('UPDATE_JOB', toUpdate)
 
-    } catch (e) {
-      commit('SET_ERROR', e, { root: true })
-      throw e
+    } catch (error) {
+      commit('SET_ERROR', error, { root: true })
+      throw error
     }
   }
 
@@ -98,8 +106,8 @@ export const actions = {
 export const getters = {
   jobs: state => state.jobs,
 
-  // editingJob: state => state.editingJob,
-  editingJob: state => Object.assign({}, state.editingJob), //fixed [vuex] Do not mutate vuex store state outside mutation handlers. ERROR BUT FIALS VALIDATION?
+  editingJob: state => state.editingJob,
+  // editingJob: state => Object.assign({}, state.editingJob), //fixed [vuex] Do not mutate vuex store state outside mutation handlers. ERROR BUT FIALS VALIDATION?
 
   jobsCount: state => state.jobs.length
 }

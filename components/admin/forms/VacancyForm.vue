@@ -51,13 +51,13 @@ import translit from "@/filters/translit.filter";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
-  // data: () => ({
-  //   vacancy: {
-  //     title: "",
-  //     content: "",
-  //     published: false
-  //   }
-  // }),
+  data: () => ({
+    vacancy: {
+      title: "",
+      content: "",
+      published: false
+    }
+  }),
   validations: {
     vacancy: {
       title: { required },
@@ -67,17 +67,19 @@ export default {
   },
 
   computed: {
-    vacancy() {
-      if(Object.keys(this.$store.getters["jobs/editingJob"]).length === 0) {
-        return {
-          title: "",
-          content: "",
-          published: false
-        }
-      } else {
-        return this.$store.getters["jobs/editingJob"]
-      }
-    },
+    // vacancy() {
+    //   if(Object.keys(this.$store.getters["jobs/editingJob"]).length === 0) {
+    //     return {
+    //       title: "",
+    //       content: "",
+    //       published: false
+    //     }
+    //   } else {
+    //   this.$store.getters["jobs/editingJob"]
+    //     // return Object.assign({}, this.$store.getters["jobs/editingJob"])
+
+    //   }
+    // },
 
     vacancyTitleErrors() {
       const errors = [];
@@ -150,11 +152,15 @@ export default {
   },
 
   mounted() {
-    // console.log(this.$store.getters["jobs/editingJob"]);
+    //fixed [vuex] Do not mutate vuex store state outside mutation handlers. ERROR BUT FIALS VALIDATION?
 
-    // console.log(this.vacancy);
-    // this.vacancy = this.$store.getters["jobs/editingJob"]
-    // console.log(this.vacancy);
+    //const jobsData = Object.keys(jobs).map(key => ({...jobs[key], id: key }))
+
+
+
+    this.vacancy = Object.assign(this.vacancy, this.$store.getters["jobs/editingJob"])
+
+
 
   },
 
@@ -172,20 +178,15 @@ export default {
         const formData = {
           id: this.vacancy.id,
           title: this.vacancy.title,
-          // alias: this.alias,
           content: this.vacancy.content,
           published: this.vacancy.published
-          // published: this.vacancy.published || false
         };
 
         try {
           await this.$store.dispatch("jobs/updateVacancy", formData);
-
           this.$store.commit('SET_NOTICE', "Запись успешно обновлена");
-
-
         } catch (e) {
-          console.log(e);
+          this.$store.commit('SET_ERROR', e, { root: true })
         }
       } else {
         // create vacancy
@@ -195,21 +196,28 @@ export default {
           published: this.vacancy.published
         };
 
+
+
         try {
-          await this.$store.dispatch("jobs/createVacancy", formData);
-          // console.log("Запись успешно добавлена");
-          // this.$noticeError("Запись успешно добавлена");
-          // this.$notice("Запись успешно добавлена");
+
+
+          await  this.$store.dispatch("jobs/createVacancy", formData);
+
+
+          // console.log(vacancyCreate);
+
+          // this.$store.commit('SET_NOTICE', "Запись успешно добавлена");
+
+
+
         } catch (e) {
-          // commit('SET_ERROR', e, { root: true })
-          // throw e
-
-          this.$store.commit('SET_ERROR', e);
-
-
-
-          // this.$noticeError(console.log(e));
+          console.log('!!!!!!!!!!');
+          this.$store.commit('SET_ERROR', e, { root: true })
         }
+
+
+
+
       }
     },
 
