@@ -15,6 +15,16 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+
+
+
+# deploy to heroku
+> git push heroku main
+
+//Ensure that at least one instance of the app is running:
+> heroku ps:scale web=1
+
 ```
+
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
