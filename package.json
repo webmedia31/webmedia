@@ -4,6 +4,9 @@
   "engines": {
     "node": "14.10.0"
   },
+  "config" : {
+    "port" : "8080"
+  },
   "private": true,
   "scripts": {
     "dev": "nuxt",
