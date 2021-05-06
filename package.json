@@ -10,7 +10,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "nuxt start"
   },
   "dependencies": {
     "nuxt": "^2.15.4",
