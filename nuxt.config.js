@@ -91,7 +91,10 @@ export default {
             targets: isServer ? { node: '10.21.0' } : { browsers: ['defaults'] }
           }
         ]
-      }
+      },
+      plugins: [
+          ['@babel/plugin-proposal-private-methods', { loose: true }]
+      ]
     },
     transpile: [
       '@splidejs/vue-splide',

@@ -1,26 +1,33 @@
 <template>
-  <v-app>
-    <Navbar />
+    <v-app>
+        <Navbar/>
 
-    <v-main>
-      <nuxt />
-    </v-main>
+        <v-main>
+            <nuxt/>
+        </v-main>
 
-    <Snackbar />
+        <Snackbar/>
 
-  </v-app>
+    </v-app>
 </template>
 
 <script>
+    import Navbar from '/components/navigation/Navbar'
+    import Snackbar from '/components/ui/Snackbar'
+
+    export default {
 
 
-export default {
-  name: "default",
-  head() {
-    return {
-      titleTemplate: "%s | Webmedia",
-      meta: [{hid: "description", name: "description", content: "Описание страницы в шаблоне"}]
+        components: {
+            Navbar,
+            Snackbar
+        },
+        name: "default",
+        head() {
+            return {
+                titleTemplate: "%s | Webmedia",
+                meta: [{hid: "description", name: "description", content: "Описание страницы в шаблоне"}]
+            };
+        },
     };
-  },
-};
 </script>

@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'admin-vacancy',
+  name: 'admin-vacancy-index',
   layout: 'admin',
   async fetch({ store }) {
     if (store.getters["jobs/jobs"].length === 0) {

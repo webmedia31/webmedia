@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "nuxt": "^2.15.4",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/firebase": "^7.4.1",
     "@nuxtjs/pwa": "^3.3.4",
@@ -16,12 +17,12 @@
     "core-js": "^3.8.2",
     "cyrillic-to-translit-js": "^3.1.0",
     "firebase": "^8.2.4",
-    "nuxt": "^2.14.12",
     "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.3",
     "node-sass": "^5.0.0",
-    "sass-loader": "^10.1.1"
+    "sass-loader": "^10.1.1",
+    "@nuxt/ufo": "^0.5.4"
   }
 }
