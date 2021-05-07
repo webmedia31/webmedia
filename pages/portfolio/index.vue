@@ -2,7 +2,9 @@
     <div>
         <section v-if="!loading">
             <h1>Slider</h1>
-            <Slider/>
+
+
+            <SlickCarousel/>
 
             <v-container>
                 <div class="static-footer d-flex justify-space-between align-center">
@@ -20,14 +22,29 @@
 
 <script>
     import LinkShowreel from '/components/links/LinkShowreel'
+    import SlickCarousel from '/components/SlickCarousel'
 
     export default {
         components: {
-            LinkShowreel
+            LinkShowreel,
+            SlickCarousel
+        },
+        head() {
+            return {
+                title: "Проекты",
+                meta: [
+                    {
+                        hid: "description",
+                        name: "description",
+                        content: "Описание страницы Проекты"
+                    }
+                ]
+            };
         },
         data: () => ({
             loading: true
         }),
+
         mounted() {
             this.loading = false;
         },

@@ -18,7 +18,7 @@ $ npm run generate
 
 ```
 
-## Deploy to heroku
+## Deploy to Heroku
 
 > git push heroku main
 
