@@ -24,6 +24,7 @@ export default {
   plugins: [
     { src: '@/plugins/vuelidate.plugin' },
     { src: '@/utils/notice.plugin' },
+    { src: '@/plugins/nuxt-swiper-plugin', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

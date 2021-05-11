@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section v-if="!loading">
+        <!--<section v-if="!loading">-->
             <h1>Slider</h1>
 
 
@@ -13,10 +13,10 @@
                 </div>
             </v-container>
 
-        </section>
-        <section v-else class="d-flex justify-center align-center">
-            LOADING...
-        </section>
+        <!--</section>-->
+        <!--<section v-else class="d-flex justify-center align-center">-->
+            <!--LOADING...-->
+        <!--</section>-->
     </div>
 </template>
 
@@ -54,8 +54,7 @@
                 next();
             }, 500);
 
-            // called when the route that renders this component is about to
-            // be navigated away from.
+            // called when the route that renders this component is about to be navigated away from.
             // has access to `this` component instance.
         }
         // beforeDestroy() {
