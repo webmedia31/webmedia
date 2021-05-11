@@ -81,17 +81,7 @@ h2 {
   margin: 70px 0px 35px;
 }
 
-@media (min-width: 768px) {
-  h1 {
-    font-size: 45px;
-  }
-}
 
-@media (min-width: 1280px) {
-  h1 {
-    font-size: 60px;
-  }
-}
 
 
 /* Nuxt pages transitions */
@@ -143,4 +133,58 @@ h2 {
 
 .v-expansion-panel-content__wrap {
   padding: 0px !important;
+}
+
+
+
+.theme--dark.v-application {
+  background: #CCC;
+}
+
+
+
+
+
+
+
+
+/* FONTS SIZES MEDIA QUERIES */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 45px;
+  }
+}
+
+@media (min-width: 1280px) {
+  h1 {
+    font-size: 60px;
+  }
+}
+
+
+
+
+/* OVERWRITE VUETIFY CONTAINER WIDTH */
+@media (min-width: 320px) {
+  .container {
+    max-width: 280px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 688px !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1820px !important;
+  }
 }

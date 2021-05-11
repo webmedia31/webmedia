@@ -4,7 +4,10 @@
         <nav class="navbar d-flex justify-space-between">
             <Logo/>
 
-            <LinksAuth/>
+
+            <!-- link вход /  -->
+            <!--<LinksAuth/>-->
+
 
             <ul class="navbar-menu">
                 <li v-for="(item, index) in navBarItems" :key="index">
@@ -118,7 +121,7 @@
         display: none !important;
     }
 
-    .navbar-menu a {
+    .v-application .navbar-menu a {
         color: #fffcf9;
         padding: 7px 21px;
     }

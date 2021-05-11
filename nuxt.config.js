@@ -22,9 +22,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '@/plugins/vuelidate.plugin' },
-    { src: '@/utils/notice.plugin' },
-    { src: '@/plugins/nuxt-swiper-plugin', mode: 'client' }
+      { src: '@/utils/notice.plugin' },
+      { src: '@/plugins/vuelidate.plugin' },
+      { src: '@/plugins/vuetify' },
+      { src: '@/plugins/nuxt-swiper-plugin', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -35,7 +36,9 @@ export default {
     '@nuxtjs/vuetify',
   ],
   vuetify: {
-    "theme": { dark: true },
+    "theme": {
+      dark: true,
+    },
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules

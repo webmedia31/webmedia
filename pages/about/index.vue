@@ -2,16 +2,19 @@
     <v-container>
         <div>
             <section class="intro">
-                <p>Решаем любые задачи</p>
-                <h1>{{ pageHeaderH1 }}</h1>
-                <p>Нам нравится видеть результат нашей работы</p>
+                <div class="col-md-10 offset-md-1">
+                    <p class="intro__pre-header header-description">Решаем любые задачи</p>
+                    <h1 class="intro__header">{{ pageHeaderH1 }}</h1>
+                    <p class="intro__sub-header header-description">Нам нравится видеть результат нашей работы</p>
+                </div>
+
                 <div class="viewport-footer">
                     <LinksSocial :theme="`light`"/>
                     <LinkShowreel/>
                 </div>
             </section>
 
-            <hr/>
+            <div class="line-divider"/>
 
             <section class="main_in_work">
                 <span>Главное в работе</span>
@@ -102,4 +105,33 @@
     };
 </script>
 
-<style></style>
+<style>
+    .intro {
+        height: 97vh;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .viewport-footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0px;
+    }
+    p.intro__pre-header {
+        margin-bottom: 10px;
+    }
+    p.intro__sub-header {
+        margin-top: 35px;
+    }
+
+    p.header-description {
+        color: #FFFCF9;
+    }
+
+    .line-divider {
+        margin: 30px 0px;
+        width: 100%;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.2);
+    }
+</style>
